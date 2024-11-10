@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Vorhersage des Einkommens basierend auf dem Adult Income Dataset - Data Science</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Data Science</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Welcome to MkDocs</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Fastapi</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../data_models/" class="dropdown-item">Datenmodelle mit Pydantic in FastAPI</a>
+</li>
+                                    
+<li>
+    <a href="../first_steps/" class="dropdown-item">Erste Schritte mit FastAPI: HTTP-Routen</a>
+</li>
+                                    
+<li>
+    <a href="../intro/" class="dropdown-item">Einführung in FastAPI</a>
+</li>
+                                    
+<li>
+    <a href="../sqlmodel/" class="dropdown-item">Arbeiten mit SQLModel in FastAPI</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Vorhersage des Einkommens basierend auf dem Adult Income Dataset</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../sqlmodel/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#vorhersage-des-einkommens-basierend-auf-dem-adult-income-dataset" class="nav-link">Vorhersage des Einkommens basierend auf dem Adult Income Dataset</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#aufgabe-1-datenvorbereitung-und-verstandnis" class="nav-link">Aufgabe 1: Datenvorbereitung und -verständnis</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#aufgabe-2-erstellen-eines-sqlmodel-datenmodells" class="nav-link">Aufgabe 2: Erstellen eines SQLModel-Datenmodells</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#aufgabe-3-api-erstellung-mit-fastapi" class="nav-link">Aufgabe 3: API-Erstellung mit FastAPI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#aufgabe-4-testen-der-api-mit-postman-oder-einem-anderen-api-client" class="nav-link">Aufgabe 4: Testen der API mit Postman oder einem anderen API-Client</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#aufgabe-5-zusatz-analyse-und-modellverbesserung" class="nav-link">Aufgabe 5 (Zusatz): Analyse und Modellverbesserung</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="vorhersage-des-einkommens-basierend-auf-dem-adult-income-dataset">Vorhersage des Einkommens basierend auf dem Adult Income Dataset</h1>
+<p>In dieser Aufgabe wirst du das <strong>Adult Income Dataset</strong> verwenden, um ein einfaches API-Modell zu erstellen, das die Wahrscheinlichkeit vorhersagt, ob jemand mehr als 50.000 USD jährlich verdient, basierend auf verschiedenen demografischen Merkmalen. Du wirst SQLModel für das Speichern der Daten in einer Datenbank und FastAPI für die API-Erstellung verwenden.</p>
+<h2 id="aufgabe-1-datenvorbereitung-und-verstandnis">Aufgabe 1: Datenvorbereitung und -verständnis</h2>
+<p>Lade das <a href="https://archive.ics.uci.edu/dataset/2/adult"><strong>Adult Income Dataset</strong></a> herunter und analysiere die Spalten. Erstelle ein Streamlit Dashboard oder Jupyter Notebook, um den Datensatz visuell aufzubereiten. Der Datensatz enthält folgende Merkmale:</p>
+<ul>
+<li><code>age</code>: Alter der Person</li>
+<li><code>workclass</code>: Arbeitsverhältnis (z.B. privat, öffentlich)</li>
+<li><code>fnlwgt</code>: Gewicht (repräsentiert die Anzahl der Menschen, die in der Stichprobe repräsentiert sind)</li>
+<li><code>education</code>: Höchster Bildungsabschluss</li>
+<li><code>education-num</code>: Bildung in numerischer Form</li>
+<li><code>marital-status</code>: Familienstand</li>
+<li><code>occupation</code>: Beruf</li>
+<li><code>relationship</code>: Beziehung zum Haushaltsvorstand</li>
+<li><code>race</code>: Rasse</li>
+<li><code>sex</code>: Geschlecht</li>
+<li><code>capital-gain</code>: Kapitalgewinne</li>
+<li><code>capital-loss</code>: Kapitalverlust</li>
+<li><code>hours-per-week</code>: Arbeitsstunden pro Woche</li>
+<li><code>native-country</code>: Geburtsland</li>
+<li><code>income</code>: Einkommen (mehr als 50K oder weniger)</li>
+</ul>
+<h2 id="aufgabe-2-erstellen-eines-sqlmodel-datenmodells">Aufgabe 2: Erstellen eines SQLModel-Datenmodells</h2>
+<p>Erstelle ein <code>User</code>-Datenmodell mit SQLModel, das die oben genannten Merkmale repräsentiert. Definiere auch den Typ der Merkmale (z. B. <code>age</code> als Integer, <code>education</code> als String). </p>
+<!-- Beispiel:
+```python
+from sqlmodel import SQLModel, Field
+from typing import Optional
+
+class AdultIncomeData(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    age: int
+    workclass: str
+    fnlwgt: int
+    education: str
+    education_num: int
+    marital_status: str
+    occupation: str
+    relationship: str
+    race: str
+    sex: str
+    capital_gain: int
+    capital_loss: int
+    hours_per_week: int
+    native_country: str
+    income: str
+``` -->
+
+<h2 id="aufgabe-3-api-erstellung-mit-fastapi">Aufgabe 3: API-Erstellung mit FastAPI</h2>
+<p>Erstelle eine FastAPI-Anwendung, die folgende Funktionalitäten bietet:</p>
+<ol>
+<li>
+<p><strong>Daten hinzufügen</strong>: Erstelle eine POST-Route, die es ermöglicht, neue Benutzerdaten hinzuzufügen. Die Route sollte alle Merkmale des Datensatzes akzeptieren.</p>
+</li>
+<li>
+<p><strong>Daten abfragen</strong>: Erstelle eine GET-Route, um alle gespeicherten Benutzerdaten abzurufen.</p>
+</li>
+<li>
+<p><strong>Einkommensvorhersage</strong>: Erstelle eine weitere POST-Route, die basierend auf den eingegebenen demografischen Merkmalen vorhersagt, ob das Einkommen mehr als 50.000 USD beträgt oder nicht. Diese Route sollte ein Modell wie z. B. einen einfachen Entscheidungsbaum verwenden (der zuvor auf den Daten trainiert wurde), um die Vorhersage zu treffen.</p>
+</li>
+</ol>
+<!-- 
+Beispiel:
+```python
+from fastapi import FastAPI
+from sqlmodel import Session, create_engine
+from sqlalchemy.orm import sessionmaker
+from pydantic import BaseModel
+from typing import Optional
+
+# FastAPI-Instanz
+app = FastAPI()
+
+# Pydantic-Modell für die Anfrage
+class AdultIncomeRequest(BaseModel):
+    age: int
+    workclass: str
+    fnlwgt: int
+    education: str
+    education_num: int
+    marital_status: str
+    occupation: str
+    relationship: str
+    race: str
+    sex: str
+    capital_gain: int
+    capital_loss: int
+    hours_per_week: int
+    native_country: str
+
+# API-Route zur Vorhersage des Einkommens
+@app.post("/predict-income/")
+async def predict_income(data: AdultIncomeRequest):
+    # Hier kannst du den Vorhersage-Algorithmus (z. B. Entscheidungsbaum) anwenden
+    # Beispiel: Ein einfaches Modell, das "income" auf Grundlage von Alter und Stunden pro Woche vorhersagt.
+    if data.age > 50 and data.hours_per_week > 40:
+        return {"income": ">50K"}
+    else:
+        return {"income": "<=50K"}
+``` -->
+
+<h2 id="aufgabe-4-testen-der-api-mit-postman-oder-einem-anderen-api-client">Aufgabe 4: Testen der API mit Postman oder einem anderen API-Client</h2>
+<ol>
+<li>
+<p><strong>Daten hinzufügen</strong>: Verwende die POST-Route <code>/add-user</code> (oder eine benannte Route) zum Hinzufügen eines neuen Datensatzes.</p>
+</li>
+<li>
+<p><strong>Daten abfragen</strong>: Verwende die GET-Route <code>/users</code>, um alle gespeicherten Benutzer abzurufen.</p>
+</li>
+<li>
+<p><strong>Einkommensvorhersage</strong>: Teste die <code>/predict-income/</code>-Route, indem du verschiedene Werte für <code>age</code>, <code>hours-per-week</code> und andere Merkmale eingibst.</p>
+</li>
+</ol>
+<h2 id="aufgabe-5-zusatz-analyse-und-modellverbesserung">Aufgabe 5 (Zusatz): Analyse und Modellverbesserung</h2>
+<p>Nachdem du die API erstellt hast, analysiere die Vorhersageergebnisse und überlege, wie du das Modell verbessern kannst</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Datenmodelle mit Pydantic in FastAPI - Data Science</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Data Science</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Welcome to MkDocs</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Fastapi</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Datenmodelle mit Pydantic in FastAPI</a>
+</li>
+                                    
+<li>
+    <a href="../first_steps/" class="dropdown-item">Erste Schritte mit FastAPI: HTTP-Routen</a>
+</li>
+                                    
+<li>
+    <a href="../intro/" class="dropdown-item">Einführung in FastAPI</a>
+</li>
+                                    
+<li>
+    <a href="../sqlmodel/" class="dropdown-item">Arbeiten mit SQLModel in FastAPI</a>
+</li>
+                                    
+<li>
+    <a href="../task/" class="dropdown-item">Vorhersage des Einkommens basierend auf dem Adult Income Dataset</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../.." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../first_steps/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#datenmodelle-mit-pydantic-in-fastapi" class="nav-link">Datenmodelle mit Pydantic in FastAPI</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#warum-pydantic" class="nav-link">Warum Pydantic?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#erstellen-eines-einfachen-datenmodells" class="nav-link">Erstellen eines einfachen Datenmodells</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#modell-in-fastapi-einbinden" class="nav-link">Modell in FastAPI einbinden</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#validierung-und-fehlerbehandlung" class="nav-link">Validierung und Fehlerbehandlung</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#eigene-validierungen" class="nav-link">Eigene Validierungen</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="datenmodelle-mit-pydantic-in-fastapi">Datenmodelle mit Pydantic in FastAPI</h1>
+<p>Datenmodelle sind ein wesentlicher Bestandteil von APIs, da sie definieren, welche Art von Daten zwischen dem Server und den Clients ausgetauscht werden kann. In FastAPI übernimmt die Bibliothek <strong>Pydantic</strong> diese Aufgabe, indem sie Python-Datenstrukturen in valide JSON-Objekte verwandelt. Pydantic bietet starke Validierungs- und Typisierungsfunktionen und ermöglicht es uns, Daten mit minimalem Aufwand zu strukturieren und zu validieren.</p>
+<h2 id="warum-pydantic">Warum Pydantic?</h2>
+<p>Pydantic ist eine zentrale Bibliothek in FastAPI, da sie eine einfache Möglichkeit bietet, Daten zu validieren und zu serialisieren. Mit Pydantic können wir sicherstellen, dass die Daten, die von einem Client gesendet werden oder an diesen zurückgegeben werden, den gewünschten Typen entsprechen. Dies verringert potenzielle Fehler und macht den Code robuster und lesbarer.</p>
+<h3 id="typisierung-und-validierung">Typisierung und Validierung</h3>
+<p>Pydantic nutzt Python’s Typannotation, um die Struktur der Daten zu definieren und die Validierung basierend auf den angegebenen Datentypen durchzuführen. Wenn du also ein Modell mit Feldern wie <code>str</code>, <code>int</code> oder <code>EmailStr</code> erstellst, stellt Pydantic sicher, dass die Daten den entsprechenden Typen entsprechen.</p>
+<p>Ein Beispiel für eine einfache Typisierung:</p>
+<pre><code class="language-python">from pydantic import BaseModel, EmailStr
+
+class User(BaseModel):
+    name: str
+    email: EmailStr
+    age: int
+</code></pre>
+<p>Hier sorgt Pydantic dafür, dass die <code>email</code>-Adresse als gültige E-Mail-Adresse formatiert ist, während der Name ein String und das Alter eine Ganzzahl ist.</p>
+<h3 id="unterstutzte-datentypen">Unterstützte Datentypen</h3>
+<p>Pydantic unterstützt eine breite Palette von Datentypen, um unterschiedliche Anwendungsfälle abzudecken. Zu den wichtigsten gehören:</p>
+<ul>
+<li><strong>Primitive Typen</strong>: <code>str</code>, <code>int</code>, <code>float</code>, <code>bool</code></li>
+<li><strong>Spezielle Typen</strong>: <code>EmailStr</code>, <code>UUID</code>, <code>IPv4</code>, <code>IPv6</code></li>
+<li><strong>Optionale Felder</strong>: <code>Optional[T]</code>, um Felder als optional zu kennzeichnen</li>
+<li><strong>Listen und Tupel</strong>: <code>List[T]</code>, <code>Tuple[T, ...]</code></li>
+<li><strong>Datum und Uhrzeit</strong>: <code>datetime</code>, <code>date</code>, <code>time</code></li>
+</ul>
+<h2 id="erstellen-eines-einfachen-datenmodells">Erstellen eines einfachen Datenmodells</h2>
+<p>Schauen wir uns ein einfaches Beispiel an: Wir möchten eine API, die Benutzerdaten wie <code>name</code>, <code>email</code> und <code>age</code> verarbeitet. Mit Pydantic definieren wir die Struktur der zu verarbeitenden Daten.</p>
+<pre><code class="language-python">from pydantic import BaseModel, EmailStr
+
+class User(BaseModel):
+    name: str
+    email: EmailStr
+    age: int
+</code></pre>
+<p>In diesem Modell wird <code>name</code> als <code>str</code>, <code>email</code> als <code>EmailStr</code> und <code>age</code> als <code>int</code> validiert. Die <code>EmailStr</code>-Typisierung stellt sicher, dass die Eingabe eine gültige E-Mail-Adresse ist.</p>
+<h3 id="aufgabe">Aufgabe</h3>
+<p>Erweitere das <code>User</code>-Modell, indem du ein optionales Feld für <code>city</code> hinzufügst, das einen Standardwert hat, zum Beispiel <code>"Unbekannt"</code>. Füge außerdem ein Feld <code>is_active</code> hinzu, das einen <code>bool</code>-Wert erwartet und standardmäßig auf <code>True</code> gesetzt ist.</p>
+<h2 id="modell-in-fastapi-einbinden">Modell in FastAPI einbinden</h2>
+<p>Nachdem wir das Datenmodell mit Pydantic erstellt haben, wollen wir es in einer FastAPI-Anwendung verwenden. FastAPI ermöglicht es uns, Pydantic-Modelle direkt in Routen zu integrieren. So können wir sicherstellen, dass alle eingehenden Daten den definierten Anforderungen entsprechen.</p>
+<pre><code class="language-python">from fastapi import FastAPI
+from pydantic import BaseModel, EmailStr
+from typing import Optional
+
+app = FastAPI()
+
+class User(BaseModel):
+    name: str
+    email: EmailStr
+    age: int
+    city: Optional[str] = &quot;Unbekannt&quot;
+    is_active: bool = True
+
+@app.post(&quot;/users/&quot;)
+async def create_user(user: User):
+    return {&quot;user&quot;: user}
+</code></pre>
+<p>In diesem Beispiel haben wir die Route <code>/users/</code> erstellt, die einen <code>POST</code>-Request erwartet. FastAPI übernimmt die Validierung der Daten und gibt die gültigen Daten als Antwort zurück.</p>
+<h3 id="aufgabe_1">Aufgabe</h3>
+<p>Teste die <code>/users/</code>-Route mit einem API-Client wie Postman. Sende ein JSON-Objekt, das die Felder <code>name</code>, <code>email</code> und <code>age</code> enthält, und überprüfe, wie FastAPI das Modell validiert und zurückgibt.</p>
+<h2 id="validierung-und-fehlerbehandlung">Validierung und Fehlerbehandlung</h2>
+<p>FastAPI und Pydantic bieten umfangreiche Möglichkeiten, Daten zu validieren. Wenn Daten nicht den Anforderungen entsprechen, gibt FastAPI eine detaillierte Fehlermeldung zurück, die den Entwickler genau darüber informiert, welcher Wert nicht gültig ist.</p>
+<h3 id="beispiel-fur-eine-validierung">Beispiel für eine Validierung:</h3>
+<pre><code class="language-python">from pydantic import BaseModel, Field
+
+class User(BaseModel):
+    name: str = Field(..., min_length=2, max_length=50)
+    email: EmailStr
+    age: int = Field(..., gt=0, le=120)  # Altersbeschränkung
+    city: Optional[str] = &quot;Unbekannt&quot;
+    is_active: bool = True
+</code></pre>
+<p>In diesem Beispiel haben wir Einschränkungen für das Feld <code>name</code> (minimale und maximale Länge) und <code>age</code> (größer als 0 und maximal 120 Jahre) definiert.</p>
+<p>Wenn jemand beispielsweise eine ungültige E-Mail-Adresse sendet oder das Alter zu hoch ist, gibt FastAPI eine Fehlerantwort zurück.</p>
+<h3 id="aufgabe_2">Aufgabe</h3>
+<p>Teste das Modell in einer einfachen <code>POST</code>-Route, indem du es in FastAPI integrierst. Übermittle verschiedene <code>name</code>- und <code>age</code>-Werte und beobachte die Fehlermeldungen, die FastAPI automatisch generiert, wenn die Validierungen fehlschlagen.</p>
+<h2 id="eigene-validierungen">Eigene Validierungen</h2>
+<p>Pydantic ermöglicht es, benutzerdefinierte Validierungen hinzuzufügen. Wenn du komplexere Anforderungen hast, die über die Standardvalidierung hinausgehen, kannst du eigene Validierungsfunktionen implementieren.</p>
+<p>Ein Beispiel für eine benutzerdefinierte Validierung:</p>
+<pre><code class="language-python">from pydantic import validator
+
+class User(BaseModel):
+    name: str
+    email: EmailStr
+    age: int
+
+    @validator(&quot;name&quot;)
+    def name_must_not_contain_numbers(cls, v):
+        if any(char.isdigit() for char in v):
+            raise ValueError(&quot;Name darf keine Zahlen enthalten&quot;)
+        return v
+</code></pre>
+<p>In diesem Beispiel wird eine Validierung für das Feld <code>name</code> hinzugefügt, die sicherstellt, dass der Name keine Zahlen enthält.</p>
+<h3 id="aufgabe_3">Aufgabe</h3>
+<p>Erweitere den <code>name</code>-Validator, sodass er auch sicherstellt, dass der Name keine Sonderzeichen enthält. Teste den Validator, indem du Namen wie „John@Doe“ und „123Peter“ eingibst und überprüfe die Fehlermeldungen.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
