@@ -1,0 +1,937 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../intro/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+    
+    
+      
+        <title>Datenvisualisierung - Data Science</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#visualisierungen-in-der-deskriptiven-statistik" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Data Science" class="md-header__button md-logo" aria-label="Data Science" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Data Science
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Datenvisualisierung
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Data Science" class="md-nav__button md-logo" aria-label="Data Science" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Data Science
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FastAPI
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            FastAPI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fastapi/intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fastapi/first_steps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Erste Schritte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fastapi/data_models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datenmodelle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fastapi/sqlmodel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SQLModel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fastapi/task/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aufgabe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Analysis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Data Analysis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Datenvisualisierung
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Datenvisualisierung
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-histogramm" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Histogramm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-boxplot" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Boxplot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-streudiagramm-scatter-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Streudiagramm (Scatter Plot)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-liniendiagramm" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Liniendiagramm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-violinplot" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Violinplot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-heatmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Heatmap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-paarplot-pair-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Paarplot (Pair Plot)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-balkendiagramm-bar-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Balkendiagramm (Bar Chart)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-kreisdiagramm-pie-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      9, Kreisdiagramm (Pie Chart)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-flachendiagramm-area-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Flächendiagramm (Area Chart)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-blasendiagramm-bubble-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Blasendiagramm (Bubble Chart)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-gestapeltes-balkendiagramm-stacked-bar-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Gestapeltes Balkendiagramm (Stacked Bar Chart)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-histogramm" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Histogramm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-boxplot" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Boxplot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-streudiagramm-scatter-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Streudiagramm (Scatter Plot)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-liniendiagramm" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Liniendiagramm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-violinplot" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Violinplot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-heatmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Heatmap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-paarplot-pair-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Paarplot (Pair Plot)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-balkendiagramm-bar-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Balkendiagramm (Bar Chart)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-kreisdiagramm-pie-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      9, Kreisdiagramm (Pie Chart)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-flachendiagramm-area-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Flächendiagramm (Area Chart)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-blasendiagramm-bubble-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Blasendiagramm (Bubble Chart)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-gestapeltes-balkendiagramm-stacked-bar-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Gestapeltes Balkendiagramm (Stacked Bar Chart)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="visualisierungen-in-der-deskriptiven-statistik">Visualisierungen in der Deskriptiven Statistik</h1>
+<p>Visualisierungen sind ein grundlegendes Werkzeug, um Daten verständlich darzustellen und erste Einsichten zu gewinnen. Im Folgenden werden verschiedene Graphen vorgestellt, die sich für unterschiedliche Anwendungsfälle eignen.</p>
+<h2 id="1-histogramm">1. Histogramm</h2>
+<ul>
+<li><strong>Was zeichnet es aus:</strong> Ein Histogramm zeigt die Verteilung einer numerischen Variable, indem es die Daten in aufeinanderfolgende Intervalle unterteilt und die Häufigkeit dieser Intervalle als Balken darstellt. Die Höhe eines Balkens repräsentiert die Anzahl der Datenpunkte in diesem Intervall.</li>
+<li><strong>Wann kann ich es besonders gut anwenden:</strong> Histogramme sind ideal, um die Verteilung von Daten, insbesondere deren Form (z. B. Normalverteilung, Schiefe) und Streuung, zu visualisieren.</li>
+<li><strong>Was wäre eine Alternative:</strong> Alternativen zum Histogramm sind Dichteplots oder Boxplots, die ebenfalls Verteilungen darstellen, jedoch mit anderer Betonung.</li>
+<li><strong>Wie erstelle ich es:</strong><ul>
+<li><a href="https://plotly.com/python/histograms/">Plotly: Histogram</a></li>
+<li><a href="https://seaborn.pydata.org/generated/seaborn.histplot.html">Seaborn: histplot</a></li>
+<li><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html">Matplotlib: hist</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="2-boxplot">2. Boxplot</h2>
+<ul>
+<li><strong>Was zeichnet es aus:</strong> Ein Boxplot veranschaulicht die Verteilung der Daten durch ein Diagramm, das den Median, die oberen und unteren Quartile sowie potenzielle Ausreißer anzeigt. Die „Box“ repräsentiert den Interquartilsabstand, und „Whiskers“ zeigen die Variabilität außerhalb der Quartile.</li>
+<li><strong>Wann kann ich es besonders gut anwenden:</strong> Boxplots sind besonders nützlich, um die Verteilung und die Symmetrie von Daten sowie mögliche Ausreißer darzustellen. Ideal für den Vergleich von Kategorien oder Gruppen.</li>
+<li><strong>Was wäre eine Alternative:</strong> Alternativen sind Violinplots, die die Dichte der Verteilung detaillierter darstellen.</li>
+<li><strong>Wie erstelle ich es:</strong><ul>
+<li><a href="https://plotly.com/python/box-plots/">Plotly: Boxplot</a></li>
+<li><a href="https://seaborn.pydata.org/generated/seaborn.boxplot.html">Seaborn: boxplot</a></li>
+<li><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.boxplot.html">Matplotlib: boxplot</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="3-streudiagramm-scatter-plot">3. Streudiagramm (Scatter Plot)</h2>
+<ul>
+<li><strong>Was zeichnet es aus:</strong> Streudiagramme visualisieren die Beziehung zwischen zwei numerischen Variablen. Jeder Punkt auf dem Diagramm repräsentiert einen Datenpunkt und die Achsen die Werte der jeweiligen Variablen.</li>
+<li><strong>Wann kann ich es besonders gut anwenden:</strong> Ideal, um Korrelationen oder Muster zwischen zwei Variablen zu erkennen (z. B. ob ein linearer Zusammenhang besteht).</li>
+<li><strong>Was wäre eine Alternative:</strong> Alternativen sind Liniendiagramme (wenn eine Reihenfolge wichtig ist) oder Heatmaps für dichtere Datensätze.</li>
+<li><strong>Wie erstelle ich es:</strong><ul>
+<li><a href="https://plotly.com/python/line-and-scatter/">Plotly: Scatter Plot</a></li>
+<li><a href="https://seaborn.pydata.org/generated/seaborn.scatterplot.html">Seaborn: scatterplot</a></li>
+<li><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html">Matplotlib: scatter</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="4-liniendiagramm">4. Liniendiagramm</h2>
+<ul>
+<li><strong>Was zeichnet es aus:</strong> Ein Liniendiagramm verbindet Datenpunkte mittels Linien und veranschaulicht so den Verlauf einer oder mehrerer Reihen über eine geordnete Achse (häufig Zeit).</li>
+<li><strong>Wann kann ich es besonders gut anwenden:</strong> Liniendiagramme eignen sich gut für Zeitreihenanalysen und um Trends oder Zyklen in Daten darzustellen.</li>
+<li><strong>Was wäre eine Alternative:</strong> Eine Alternative wäre ein Flächendiagramm (Area Chart), das die gleiche Information zeigt, jedoch mit gefüllten Bereichen.</li>
+<li><strong>Wie erstelle ich es:</strong><ul>
+<li><a href="https://plotly.com/python/line-charts/">Plotly: Line Chart</a></li>
+<li><a href="https://seaborn.pydata.org/generated/seaborn.lineplot.html">Seaborn: lineplot</a></li>
+<li><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html">Matplotlib: plot</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="5-violinplot">5. Violinplot</h2>
+<ul>
+<li><strong>Was zeichnet es aus:</strong> Der Violinplot kombiniert Elemente von Boxplots und Dichteplots und zeigt die Verteilung der Daten sowie deren Dichte entlang einer Achse.</li>
+<li><strong>Wann kann ich es besonders gut anwenden:</strong> Violinplots sind nützlich, wenn man die Verteilung und die Dichte einer Variablen gleichzeitig darstellen und dabei symmetrische oder bimodale Muster aufzeigen möchte.</li>
+<li><strong>Was wäre eine Alternative:</strong> Alternativen sind der Boxplot (für eine weniger detaillierte Darstellung der Dichte) oder der Dichteplot.</li>
+<li><strong>Wie erstelle ich es:</strong><ul>
+<li><a href="https://plotly.com/python/violin/">Plotly: Violin Plot</a></li>
+<li><a href="https://seaborn.pydata.org/generated/seaborn.violinplot.html">Seaborn: violinplot</a></li>
+<li><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.violinplot.html">Matplotlib: violinplot</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="6-heatmap">6. Heatmap</h2>
+<ul>
+<li><strong>Was zeichnet es aus:</strong> Heatmaps verwenden Farbschattierungen, um die Intensität von Werten in einer Matrix zu visualisieren. Häufig werden sie verwendet, um Korrelationen zwischen Variablen darzustellen.</li>
+<li><strong>Wann kann ich es besonders gut anwenden:</strong> Heatmaps sind besonders nützlich, um Korrelationen zwischen vielen Variablen darzustellen, etwa bei der Analyse von Korrelationen in großen Datensätzen.</li>
+<li><strong>Was wäre eine Alternative:</strong> Eine Alternative zur Heatmap ist das Paarplot, das Korrelationen in Scatterplot-Matrizen zeigt.</li>
+<li><strong>Wie erstelle ich es:</strong><ul>
+<li><a href="https://plotly.com/python/heatmaps/">Plotly: Heatmap</a></li>
+<li><a href="https://seaborn.pydata.org/generated/seaborn.heatmap.html">Seaborn: heatmap</a></li>
+<li><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html">Matplotlib: imshow</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="7-paarplot-pair-plot">7. Paarplot (Pair Plot)</h2>
+<ul>
+<li><strong>Was zeichnet es aus:</strong> Ein Paarplot visualisiert alle Kombinationen der Variablenpaare in einem Datensatz als Streudiagramme und eignet sich hervorragend zur Erkennung von Korrelationen und Zusammenhängen in multidimensionalen Datensätzen.</li>
+<li><strong>Wann kann ich es besonders gut anwenden:</strong> Wenn es darum geht, Korrelationen und Beziehungen zwischen mehreren Variablen gleichzeitig zu analysieren, ist der Paarplot das Mittel der Wahl.</li>
+<li><strong>Was wäre eine Alternative:</strong> Alternativen sind Scatterplot-Matrizen oder einzelne Heatmaps.</li>
+<li><strong>Wie erstelle ich es:</strong><ul>
+<li><a href="https://seaborn.pydata.org/generated/seaborn.pairplot.html">Seaborn: pairplot</a></li>
+<li><a href="https://plotly.com/python/splom/">Plotly: scatter_matrix</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="8-balkendiagramm-bar-chart">8. Balkendiagramm (Bar Chart)</h2>
+<ul>
+<li><strong>Was zeichnet es aus:</strong> Ein Balkendiagramm stellt kategorische Daten durch rechteckige Balken dar, deren Länge proportional zur Häufigkeit oder zum Wert einer Kategorie ist.</li>
+<li><strong>Wann kann ich es besonders gut anwenden:</strong> Balkendiagramme sind ideal, um die Größenverhältnisse verschiedener Kategorien direkt miteinander zu vergleichen.</li>
+<li><strong>Was wäre eine Alternative:</strong> Eine Alternative zum Balkendiagramm ist das Säulendiagramm, das ähnliche Daten vertikal darstellt.</li>
+<li><strong>Wie erstelle ich es:</strong><ul>
+<li><a href="https://plotly.com/python/bar-charts/">Plotly: Bar Chart</a></li>
+<li><a href="https://seaborn.pydata.org/generated/seaborn.barplot.html">Seaborn: barplot</a></li>
+<li><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.bar.html">Matplotlib: bar</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="9-kreisdiagramm-pie-chart">9, Kreisdiagramm (Pie Chart)</h2>
+<ul>
+<li><strong>Was zeichnet es aus:</strong> Ein Kreisdiagramm teilt einen Kreis in Segmente, die jeweils eine Kategorie repräsentieren, und zeigt deren Anteile am Gesamtwert.</li>
+<li><strong>Wann kann ich es besonders gut anwenden:</strong> Kreisdiagramme sind gut geeignet, um den Anteil einer Kategorie im Verhältnis zum Ganzen darzustellen, allerdings nicht bei mehr als fünf Kategorien.</li>
+<li><strong>Was wäre eine Alternative:</strong> Alternativen sind Donut Charts oder gestapelte Balkendiagramme, die Verhältnisse auch darstellen können.</li>
+<li><strong>Wie erstelle ich es:</strong><ul>
+<li><a href="https://plotly.com/python/pie-charts/">Plotly: Pie Chart</a></li>
+<li><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.pie.html">Matplotlib: pie</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="10-flachendiagramm-area-chart">10. Flächendiagramm (Area Chart)</h2>
+<ul>
+<li><strong>Was zeichnet es aus:</strong> Ein Flächendiagramm ist eine Variation des Liniendiagramms, bei dem der Bereich unter der Linie ausgefüllt ist, um den Wert über eine geordnete Dimension (häufig Zeit) zu verdeutlichen.</li>
+<li><strong>Wann kann ich es besonders gut anwenden:</strong> Flächendiagramme eignen sich besonders, um kumulative Daten oder Zeitreihendaten zu visualisieren, bei denen der Bereich unter der Linie eine Bedeutung hat.</li>
+<li><strong>Was wäre eine Alternative:</strong> Liniendiagramme (ohne ausgefüllte Fläche) oder Stapeldiagramme, wenn mehrere Kategorien dargestellt werden sollen.</li>
+<li><strong>Wie erstelle ich es:</strong><ul>
+<li><a href="https://plotly.com/python/filled-area-plots/">Plotly: Area Chart</a></li>
+<li><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.fill_between.html">Matplotlib: fill_between</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="11-blasendiagramm-bubble-chart">11. Blasendiagramm (Bubble Chart)</h2>
+<ul>
+<li><strong>Was zeichnet es aus:</strong> Ein Blasendiagramm ist ein erweitertes Streudiagramm, bei dem die Größe der Punkte eine zusätzliche Dimension repräsentiert, meist einen numerischen Wert.</li>
+<li><strong>Wann kann ich es besonders gut anwenden:</strong> Blasendiagramme sind nützlich, wenn man drei Dimensionen (zwei für die Achsen und eine für die Punktgröße) auf einmal visualisieren möchte.</li>
+<li><strong>Was wäre eine Alternative:</strong> Alternativen sind einfache Streudiagramme (für zwei Dimensionen) oder Heatmaps für Korrelationen zwischen mehreren Variablen.</li>
+<li><strong>Wie erstelle ich es:</strong><ul>
+<li><a href="https://plotly.com/python/bubble-charts/">Plotly: Bubble Chart</a></li>
+<li><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html">Matplotlib: scatter (mit Größenparameter)</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="12-gestapeltes-balkendiagramm-stacked-bar-chart">12. Gestapeltes Balkendiagramm (Stacked Bar Chart)</h2>
+<ul>
+<li><strong>Was zeichnet es aus:</strong> Ein gestapeltes Balkendiagramm zeigt mehrere Kategorien übereinander in einem Balken, wodurch die Gesamtmenge sowie die Verteilung der Teilkategorien auf einen Blick erkennbar sind.</li>
+<li><strong>Wann kann ich es besonders gut anwenden:</strong> Diese Darstellung eignet sich für Daten, bei denen man sowohl die Gesamtwerte als auch die Anteile der Unterkategorien gleichzeitig zeigen möchte.</li>
+<li><strong>Was wäre eine Alternative:</strong> Eine Alternative ist das 100%-gestapelte Balkendiagramm, bei dem die Balken normalisiert werden, sodass sie immer bis 100% reichen.</li>
+<li><strong>Wie erstelle ich es:</strong><ul>
+<li><a href="https://plotly.com/python/bar-charts/#stacked-bar-chart">Plotly: Stacked Bar Chart</a></li>
+<li><a href="https://matplotlib.org/stable/gallery/lines_bars_and_markers/bar_stacked.html">Matplotlib: bar (mit stacked=True)</a></li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
