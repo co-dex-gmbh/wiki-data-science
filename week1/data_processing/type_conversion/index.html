@@ -9,25 +9,23 @@
       
       
       
-        <link rel="prev" href="../data_visualization/">
+        <link rel="prev" href="../duplicates/">
       
       
-        <link rel="next" href="../eda_steps/">
       
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
-        <title>Datensätze verstehen - Data Science</title>
+        <title>Konvertierung - Data Science</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,9 +44,9 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#einstieg-in-einen-neuen-datensatz-tipps-zur-orientierung" class="md-skip">
+        <a href="#typenkonvertierungen" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Data Science" class="md-header__button md-logo" aria-label="Data Science" data-md-component="logo">
+    <a href="../../.." title="Data Science" class="md-header__button md-logo" aria-label="Data Science" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Datensätze verstehen
+              Konvertierung
             
           </span>
         </div>
@@ -183,7 +181,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Data Science" class="md-nav__button md-logo" aria-label="Data Science" data-md-component="logo">
+    <a href="../../.." title="Data Science" class="md-nav__button md-logo" aria-label="Data Science" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -201,7 +199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -256,7 +254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fastapi/intro/" class="md-nav__link">
+      <a href="../../../fastapi/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -277,7 +275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fastapi/first_steps/" class="md-nav__link">
+      <a href="../../../fastapi/first_steps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -298,7 +296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fastapi/data_models/" class="md-nav__link">
+      <a href="../../../fastapi/data_models/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -319,7 +317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fastapi/sqlmodel/" class="md-nav__link">
+      <a href="../../../fastapi/sqlmodel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -340,11 +338,158 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fastapi/task/" class="md-nav__link">
+      <a href="../../../fastapi/task/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Aufgabe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Analysis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Data Analysis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data_analysis/intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data_analysis/data_visualization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datenvisualisierung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data_analysis/understand_datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datensätze verstehen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data_analysis/eda_steps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EDA Schritte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data_analysis/tasks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aufgaben
   </span>
   
 
@@ -377,24 +522,82 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Data Analysis
+    Woche 1
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Data Analysis
+            Woche 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Überblick
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Datenverarbeitung
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Datenverarbeitung
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -426,11 +629,53 @@
   
   
     <li class="md-nav__item">
-      <a href="../data_visualization/" class="md-nav__link">
+      <a href="../missing_values/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Datenvisualisierung
+    Missing Values
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../outliers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Outliers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../duplicates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Duplikate
   </span>
   
 
@@ -453,12 +698,14 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   <span class="md-ellipsis">
-    Datensätze verstehen
+    Konvertierung
   </span>
   
 
@@ -469,7 +716,7 @@
         
   
   <span class="md-ellipsis">
-    Datensätze verstehen
+    Konvertierung
   </span>
   
 
@@ -481,6 +728,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -489,64 +738,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#einstieg-in-einen-neuen-datensatz-tipps-zur-orientierung" class="md-nav__link">
+  <a href="#warum-typenkonvertierungen-wichtig-sind" class="md-nav__link">
     <span class="md-ellipsis">
-      Einstieg in einen neuen Datensatz: Tipps zur Orientierung
+      Warum Typenkonvertierungen wichtig sind
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Einstieg in einen neuen Datensatz: Tipps zur Orientierung">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typische-herausforderungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Typische Herausforderungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methoden-zur-typenkonvertierung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methoden zur Typenkonvertierung
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Methoden zur Typenkonvertierung">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-datenquellen-und-kontext-prufen" class="md-nav__link">
+  <a href="#numerische-werte" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Datenquellen und Kontext prüfen
+      Numerische Werte
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-uberblick-uber-die-struktur-des-datensatzes-gewinnen" class="md-nav__link">
+  <a href="#datumsangaben" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Überblick über die Struktur des Datensatzes gewinnen
+      Datumsangaben
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-zentrale-kennzahlen-berechnen" class="md-nav__link">
+  <a href="#kategorische-daten" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Zentrale Kennzahlen berechnen
+      Kategorische Daten
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-datenqualitat-beurteilen" class="md-nav__link">
+  <a href="#fehlende-werte-behandeln" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Datenqualität beurteilen
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-erste-zusammenhange-und-muster-erkennen" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Erste Zusammenhänge und Muster erkennen
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6-erste-visualisierungen-nutzen" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Erste Visualisierungen nutzen
+      Fehlende Werte behandeln
     </span>
   </a>
   
@@ -561,251 +810,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../eda_steps/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    EDA Schritte
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tasks/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Aufgaben
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Woche 1
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            Woche 1
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../week1/overview/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Überblick
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Datenverarbeitung
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
-            <span class="md-nav__icon md-icon"></span>
-            Datenverarbeitung
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../week1/data_processing/intro/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Einführung
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../week1/data_processing/missing_values/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Missing Values
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../week1/data_processing/outliers/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Outliers
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../week1/data_processing/duplicates/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Duplikate
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../week1/data_processing/type_conversion/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Konvertierung
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -843,6 +847,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -851,64 +857,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#einstieg-in-einen-neuen-datensatz-tipps-zur-orientierung" class="md-nav__link">
+  <a href="#warum-typenkonvertierungen-wichtig-sind" class="md-nav__link">
     <span class="md-ellipsis">
-      Einstieg in einen neuen Datensatz: Tipps zur Orientierung
+      Warum Typenkonvertierungen wichtig sind
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Einstieg in einen neuen Datensatz: Tipps zur Orientierung">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typische-herausforderungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Typische Herausforderungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methoden-zur-typenkonvertierung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methoden zur Typenkonvertierung
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Methoden zur Typenkonvertierung">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-datenquellen-und-kontext-prufen" class="md-nav__link">
+  <a href="#numerische-werte" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Datenquellen und Kontext prüfen
+      Numerische Werte
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-uberblick-uber-die-struktur-des-datensatzes-gewinnen" class="md-nav__link">
+  <a href="#datumsangaben" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Überblick über die Struktur des Datensatzes gewinnen
+      Datumsangaben
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-zentrale-kennzahlen-berechnen" class="md-nav__link">
+  <a href="#kategorische-daten" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Zentrale Kennzahlen berechnen
+      Kategorische Daten
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-datenqualitat-beurteilen" class="md-nav__link">
+  <a href="#fehlende-werte-behandeln" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Datenqualität beurteilen
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-erste-zusammenhange-und-muster-erkennen" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Erste Zusammenhänge und Muster erkennen
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6-erste-visualisierungen-nutzen" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Erste Visualisierungen nutzen
+      Fehlende Werte behandeln
     </span>
   </a>
   
@@ -934,39 +940,65 @@
                   
 
 
-  <h1>Datensätze verstehen</h1>
+<h1 id="typenkonvertierungen">Typenkonvertierungen</h1>
+<p>Typenkonvertierungen sind ein essenzieller Bestandteil des Data Cleanings. Häufig stammen Daten aus unterschiedlichen Quellen, was zu inkonsistenten Datentypen führen kann. Beispielsweise kann ein numerischer Wert als Text gespeichert sein oder ein Datum in einem unüblichen Format vorliegen. Um Analysen durchführen zu können, müssen solche Werte in geeignete Datentypen konvertiert werden.</p>
+<h2 id="warum-typenkonvertierungen-wichtig-sind">Warum Typenkonvertierungen wichtig sind</h2>
+<ul>
+<li><strong>Korrekte Verarbeitung:</strong> Viele Analyse- und Modellierungsmethoden erfordern spezifische Datentypen (z. B. numerische Werte für Berechnungen).</li>
+<li><strong>Effizienz:</strong> Die Arbeit mit korrekt typisierten Daten ist meist schneller und ressourcenschonender.</li>
+<li><strong>Fehlervermeidung:</strong> Inkompatible Typen können zu Laufzeitfehlern oder falschen Ergebnissen führen.</li>
+</ul>
+<h2 id="typische-herausforderungen">Typische Herausforderungen</h2>
+<p><strong>Numerische Werte als Text:</strong>
+   Daten wie "1000" oder "3,14" werden oft als Zeichenketten gespeichert, müssen aber für Berechnungen in numerische Werte konvertiert werden.</p>
+<p><strong>Datumsangaben:</strong>
+   Formate wie "12/31/2024" oder "31-12-2024" erfordern eine einheitliche Konvertierung in ein Datumsobjekt.</p>
+<p><strong>Kategorische Daten:</strong>
+   Kategorien wie "Ja" und "Nein" oder "True" und "False" sollten in standardisierte Werte umgewandelt werden.</p>
+<p><strong>Fehlende Werte:</strong>
+   Leere Felder oder Platzhalter wie "N/A" oder "-" müssen erkannt und behandelt werden.</p>
+<h2 id="methoden-zur-typenkonvertierung">Methoden zur Typenkonvertierung</h2>
+<h3 id="numerische-werte"><strong>Numerische Werte</strong></h3>
+<p>Mit Bibliotheken wie Pandas in Python können Zeichenketten in numerische Werte umgewandelt werden:</p>
+<pre><code class="language-python">import pandas as pd
 
-<h2 id="einstieg-in-einen-neuen-datensatz-tipps-zur-orientierung">Einstieg in einen neuen Datensatz: Tipps zur Orientierung</h2>
-<p>Bevor wir mit einer tiefgehenden Analyse beginnen, ist es hilfreich, uns zuerst einen Überblick über den Datensatz zu verschaffen. Ein strukturierter Ansatz sorgt dafür, dass wir die Eigenschaften, Stärken und eventuelle Herausforderungen der Daten frühzeitig erkennen. Hier sind einige wichtige Schritte und Ansätze, die dir dabei helfen, dich in einem neuen Datensatz zurechtzufinden:</p>
-<h3 id="1-datenquellen-und-kontext-prufen">1. Datenquellen und Kontext prüfen</h3>
-<ul>
-<li><strong>Datenquelle und Kontext verstehen</strong>: Woher kommen die Daten? Stammt der Datensatz aus einer verlässlichen Quelle? Was ist das Ziel oder der Anwendungsfall der Daten? </li>
-<li><strong>Datenfelder und Bedeutung</strong>: Kläre die Bedeutung der einzelnen Felder. Die Dokumentation oder begleitende Metadaten enthalten oft wertvolle Informationen zu den Variablen.</li>
-</ul>
-<h3 id="2-uberblick-uber-die-struktur-des-datensatzes-gewinnen">2. Überblick über die Struktur des Datensatzes gewinnen</h3>
-<ul>
-<li><strong>Spalten und Datentypen inspizieren</strong>: Nutze Python-Methoden wie <code>df.info()</code> oder <code>df.dtypes</code>, um schnell festzustellen, welche Datentypen (numerisch, kategorisch, zeitbasiert) vorhanden sind.</li>
-<li><strong>Erste Einblicke in die Werte</strong>: Verwende <code>df.head()</code> und <code>df.tail()</code>, um dir die ersten und letzten Zeilen anzuschauen und ein Gefühl für die Dateninhalte zu bekommen. So erkennst du auch direkt mögliche Anomalien.</li>
-</ul>
-<h3 id="3-zentrale-kennzahlen-berechnen">3. Zentrale Kennzahlen berechnen</h3>
-<ul>
-<li><strong>Deskriptive Statistik</strong>: Nutze Methoden wie <code>df.describe()</code>, um erste statistische Einblicke zu gewinnen. Kennzahlen wie Mittelwert, Minimum, Maximum und Standardabweichung zeigen wichtige Eigenschaften der numerischen Variablen.</li>
-<li><strong>Verteilung der Daten prüfen</strong>: Einfache Histogramme oder Boxplots helfen, die Verteilung der Daten besser zu verstehen und Ausreißer oder Verzerrungen zu identifizieren.</li>
-</ul>
-<h3 id="4-datenqualitat-beurteilen">4. Datenqualität beurteilen</h3>
-<ul>
-<li><strong>Fehlende Werte analysieren</strong>: Prüfe, ob und wo Werte fehlen. Methoden wie <code>df.isnull().sum()</code> zeigen, wie häufig fehlende Werte in jeder Spalte auftreten.</li>
-<li><strong>Duplikate finden und bewerten</strong>: Mit <code>df.duplicated().sum()</code> erkennst du doppelte Einträge, die du ggf. bereinigen solltest.</li>
-</ul>
-<h3 id="5-erste-zusammenhange-und-muster-erkennen">5. Erste Zusammenhänge und Muster erkennen</h3>
-<ul>
-<li><strong>Korrelationen untersuchen</strong>: Ein schneller Blick auf die Korrelationen numerischer Variablen (z.B. mit <code>df.corr()</code>) kann nützliche Hinweise auf Beziehungen zwischen Variablen geben.</li>
-<li><strong>Kategoriale und numerische Variablen analysieren</strong>: Einfache Kreuztabellen (<code>pd.crosstab()</code>) oder Gruppenstatistiken (<code>df.groupby()</code>) helfen, Verteilungen und Zusammenhänge zu verstehen.</li>
-</ul>
-<h3 id="6-erste-visualisierungen-nutzen">6. Erste Visualisierungen nutzen</h3>
-<ul>
-<li><strong>Visualisierung der wichtigsten Felder</strong>: Nutze Diagramme wie Balkendiagramme, Histogramme oder Boxplots, um zentrale Eigenschaften der Variablen visuell darzustellen. Dies hilft, Muster zu erkennen und eine Grundlage für detailliertere Analysen zu schaffen.</li>
-</ul>
+# Beispiel-Daten
+data = {&quot;Werte&quot;: [&quot;100&quot;, &quot;200&quot;, &quot;300&quot;]}
+df = pd.DataFrame(data)
+
+# Typenkonvertierung
+df[&quot;Werte&quot;] = pd.to_numeric(df[&quot;Werte&quot;])
+</code></pre>
+<p>Falls die Konvertierung fehlschlägt, kann der Parameter <code>errors='coerce'</code> verwendet werden, um problematische Werte in <code>NaN</code> umzuwandeln.</p>
+<h3 id="datumsangaben"><strong>Datumsangaben</strong></h3>
+<p>Datumswerte lassen sich mit <code>pd.to_datetime</code> standardisieren:</p>
+<pre><code class="language-python"># Beispiel-Daten
+data = {&quot;Datum&quot;: [&quot;31/12/2024&quot;, &quot;01-01-2025&quot;, &quot;2024.12.30&quot;]}
+df = pd.DataFrame(data)
+
+# Typenkonvertierung
+df[&quot;Datum&quot;] = pd.to_datetime(df[&quot;Datum&quot;], dayfirst=True)
+</code></pre>
+<p>Der Parameter <code>dayfirst=True</code> stellt sicher, dass das europäische Datumsformat korrekt interpretiert wird.</p>
+<h3 id="kategorische-daten"><strong>Kategorische Daten</strong></h3>
+<p>Kategorische Daten können in numerische Codes oder <code>category</code>-Typen umgewandelt werden:</p>
+<pre><code class="language-python"># Beispiel-Daten
+data = {&quot;Antworten&quot;: [&quot;Ja&quot;, &quot;Nein&quot;, &quot;Ja&quot;]}
+df = pd.DataFrame(data)
+
+# Typenkonvertierung
+df[&quot;Antworten&quot;] = df[&quot;Antworten&quot;].astype(&quot;category&quot;)
+</code></pre>
+<p>Kategorien haben den Vorteil, weniger Speicherplatz zu beanspruchen und effizienter verarbeitet zu werden.</p>
+<h3 id="fehlende-werte-behandeln"><strong>Fehlende Werte behandeln</strong></h3>
+<p>Vor der Typenkonvertierung müssen Platzhalter wie "N/A" entfernt oder ersetzt werden:</p>
+<pre><code class="language-python"># Beispiel-Daten
+data = {&quot;Werte&quot;: [&quot;100&quot;, &quot;N/A&quot;, &quot;200&quot;]}
+df = pd.DataFrame(data)
+
+# Fehlende Werte ersetzen und konvertieren
+df[&quot;Werte&quot;] = pd.to_numeric(df[&quot;Werte&quot;], errors='coerce')
+</code></pre>
 
 
 
@@ -1013,10 +1045,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>
