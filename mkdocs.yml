@@ -1,1 +1,71 @@
 site_name: Data Science
+theme:
+  name: material
+  palette:
+    primary: custom
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  
+nav:
+  - Home: index.md
+  - FastAPI:
+      - Einführung: fastapi/intro.md
+      - Erste Schritte: fastapi/first_steps.md
+      - Datenmodelle: fastapi/data_models.md
+      - SQLModel: fastapi/sqlmodel.md
+      - Aufgabe: fastapi/task.md
+  - Data Analysis:
+      - Einführung: data_analysis/intro.md
+      - Datenvisualisierung: data_analysis/data_visualization.md
+      - Datensätze verstehen: data_analysis/understand_datasets.md
+      - EDA Schritte: data_analysis/eda_steps.md
+      - Aufgaben: data_analysis/tasks.md
+  - Woche 1 und 2:
+      - Überblick: week1/overview.md
+      - Data Cleaning: 
+        - Einführung: week1/data_processing/intro.md
+        - Missing Values: week1/data_processing/missing_values.md
+        - Outliers: week1/data_processing/outliers.md
+        - Duplikate: week1/data_processing/duplicates.md
+        - Konvertierung: week1/data_processing/type_conversion.md
+      - Ziele: week1/goals.md
+  - Woche 3:
+      - Feature Engineering:
+        - Encoding: week3/feature_engineering/encoding.md
+        - Scaling: week3/feature_engineering/scaling.md
+        - Transformation: week3/feature_engineering/transformation.md
+        - Feature Extraction: week3/feature_engineering/feature_extraction.md
+        - Erstellung neuer Features: week3/feature_engineering/new_features.md
+      - Exkurs Klassifikation:
+        - Einführung: week3/excourse_classification/intro.md
+        - Modelle trainieren: week3/excourse_classification/train_models.md
+        - Naive Bayes: week3/excourse_classification/naive_bayes.md
+      - Ziele: week3/goals.md
+  - Woche 4:
+      - Ziele: week4/goals.md
+  - Woche 5:
+      - Ziele: week5/goals.md
+  - Woche 6:
+      - Ziele: week6/goals.md
+  - Woche 7:
+      - Ziele: week7/goals.md
+  - Woche 8:
+      - Ziele: week8/goals.md
+  - Woche 9:
+      - Ziele: week9/goals.md
+  - Woche 10:
+      - Ziele: week10/goals.md
+  - Woche 11:
+      - Ziele: week11/goals.md
+      
+
+# Weitere Einstellungen und Plugins können hier hinzugefügt werden.

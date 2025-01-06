@@ -1,0 +1,2252 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../understand_datasets/">
+      
+      
+        <link rel="next" href="../tasks/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+    
+    
+      
+        <title>EDA Schritte - Data Science</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#deskriptive-datenanalyse" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Data Science" class="md-header__button md-logo" aria-label="Data Science" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Data Science
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              EDA Schritte
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Data Science" class="md-nav__button md-logo" aria-label="Data Science" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Data Science
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FastAPI
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            FastAPI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fastapi/intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fastapi/first_steps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Erste Schritte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fastapi/data_models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datenmodelle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fastapi/sqlmodel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SQLModel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fastapi/task/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aufgabe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Analysis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Data Analysis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_visualization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datenvisualisierung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../understand_datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datensätze verstehen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    EDA Schritte
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    EDA Schritte
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#einfuhrung-in-die-explorative-datenanalyse-eda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Einführung in die Explorative Datenanalyse (EDA)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Einführung in die Explorative Datenanalyse (EDA)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schritt-1-verstehen-der-datenstruktur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schritt 1: Verstehen der Datenstruktur
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Schritt 1: Verstehen der Datenstruktur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-datentypen-und-strukturen" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Datentypen und Strukturen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-kontext-und-quelle-der-daten" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Kontext und Quelle der Daten
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-metadaten-und-dokumentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Metadaten und Dokumentation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schritt-2-datenbereinigung-und-vorverarbeitung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schritt 2: Datenbereinigung und Vorverarbeitung
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Schritt 2: Datenbereinigung und Vorverarbeitung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-fehlende-werte-behandeln" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Fehlende Werte behandeln
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-duplikate-entfernen" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Duplikate entfernen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-transformation-der-daten" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Transformation der Daten
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-ausreier-identifizieren-und-behandeln" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Ausreißer identifizieren und behandeln
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schritt-3-univariate-analyse-einzelne-variablen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schritt 3: Univariate Analyse (Einzelne Variablen)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Schritt 3: Univariate Analyse (Einzelne Variablen)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-deskriptive-statistik" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Deskriptive Statistik
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-visualisierungen-univariate" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Visualisierungen (Univariate)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schritt-4-bivariate-und-multivariate-analyse-zusammenhange" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schritt 4: Bivariate und multivariate Analyse (Zusammenhänge)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Schritt 4: Bivariate und multivariate Analyse (Zusammenhänge)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-bivariate-analyse" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Bivariate Analyse
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-multivariate-analyse" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Multivariate Analyse
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-wechselwirkungen-erkennen" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Wechselwirkungen erkennen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schritt-5-einblicke-und-schlussfolgerungen-ziehen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schritt 5: Einblicke und Schlussfolgerungen ziehen
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Schritt 5: Einblicke und Schlussfolgerungen ziehen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-wichtige-erkenntnisse-zusammenfassen" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Wichtige Erkenntnisse zusammenfassen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-visuelles-storytelling" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Visuelles Storytelling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-entscheidungen-treffen" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Entscheidungen treffen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-dokumentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 Dokumentation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tasks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aufgaben
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Woche 1 und 2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Woche 1 und 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week1/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Überblick
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Cleaning
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Data Cleaning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week1/data_processing/intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week1/data_processing/missing_values/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Missing Values
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week1/data_processing/outliers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Outliers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week1/data_processing/duplicates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Duplikate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week1/data_processing/type_conversion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Konvertierung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week1/goals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ziele
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Woche 3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Woche 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Feature Engineering
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Feature Engineering
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week3/feature_engineering/encoding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Encoding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week3/feature_engineering/scaling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scaling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week3/feature_engineering/transformation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transformation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week3/feature_engineering/feature_extraction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Feature Extraction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week3/feature_engineering/new_features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Erstellung neuer Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exkurs Klassifikation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Exkurs Klassifikation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week3/excourse_classification/intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week3/excourse_classification/train_models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modelle trainieren
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week3/excourse_classification/naive_bayes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Naive Bayes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week3/goals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ziele
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Woche 4
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Woche 4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week4/goals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ziele
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Woche 5
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Woche 5
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week5/goals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ziele
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Woche 6
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Woche 6
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week6/goals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ziele
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Woche 7
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Woche 7
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week7/goals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ziele
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Woche 8
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Woche 8
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week8/goals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ziele
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Woche 9
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Woche 9
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week9/goals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ziele
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Woche 10
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Woche 10
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week10/goals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ziele
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Woche 11
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Woche 11
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week11/goals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ziele
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#einfuhrung-in-die-explorative-datenanalyse-eda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Einführung in die Explorative Datenanalyse (EDA)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Einführung in die Explorative Datenanalyse (EDA)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schritt-1-verstehen-der-datenstruktur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schritt 1: Verstehen der Datenstruktur
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Schritt 1: Verstehen der Datenstruktur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-datentypen-und-strukturen" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Datentypen und Strukturen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-kontext-und-quelle-der-daten" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Kontext und Quelle der Daten
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-metadaten-und-dokumentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Metadaten und Dokumentation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schritt-2-datenbereinigung-und-vorverarbeitung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schritt 2: Datenbereinigung und Vorverarbeitung
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Schritt 2: Datenbereinigung und Vorverarbeitung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-fehlende-werte-behandeln" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Fehlende Werte behandeln
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-duplikate-entfernen" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Duplikate entfernen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-transformation-der-daten" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Transformation der Daten
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-ausreier-identifizieren-und-behandeln" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Ausreißer identifizieren und behandeln
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schritt-3-univariate-analyse-einzelne-variablen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schritt 3: Univariate Analyse (Einzelne Variablen)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Schritt 3: Univariate Analyse (Einzelne Variablen)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-deskriptive-statistik" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Deskriptive Statistik
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-visualisierungen-univariate" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Visualisierungen (Univariate)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schritt-4-bivariate-und-multivariate-analyse-zusammenhange" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schritt 4: Bivariate und multivariate Analyse (Zusammenhänge)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Schritt 4: Bivariate und multivariate Analyse (Zusammenhänge)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-bivariate-analyse" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Bivariate Analyse
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-multivariate-analyse" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Multivariate Analyse
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-wechselwirkungen-erkennen" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Wechselwirkungen erkennen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schritt-5-einblicke-und-schlussfolgerungen-ziehen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schritt 5: Einblicke und Schlussfolgerungen ziehen
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Schritt 5: Einblicke und Schlussfolgerungen ziehen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-wichtige-erkenntnisse-zusammenfassen" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Wichtige Erkenntnisse zusammenfassen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-visuelles-storytelling" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Visuelles Storytelling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-entscheidungen-treffen" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Entscheidungen treffen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-dokumentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 Dokumentation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="deskriptive-datenanalyse">Deskriptive Datenanalyse</h1>
+<h2 id="einfuhrung-in-die-explorative-datenanalyse-eda">Einführung in die Explorative Datenanalyse (EDA)</h2>
+<p>In der explorativen Datenanalyse (EDA) werfen wir einen ersten Blick auf unsere Daten, um die wichtigsten Merkmale des Datensatzes zu erfassen und zu visualisieren. Diese Schritte helfen uns, die Daten besser zu verstehen, Hypothesen zu formulieren, und schließlich die Voraussetzungen für eine fundierte Analyse oder ein Modell zu schaffen. Im Folgenden führen wir dich Schritt für Schritt durch die fünf wesentlichen Schritte einer EDA.</p>
+<h3 id="schritt-1-verstehen-der-datenstruktur">Schritt 1: Verstehen der Datenstruktur</h3>
+<h4 id="11-datentypen-und-strukturen">1.1 Datentypen und Strukturen</h4>
+<ul>
+<li>Daten werden meist in numerische, kategorische und Zeitreihen-Daten unterteilt, und jeder Typ braucht besondere Techniken und Darstellungen.</li>
+<li>Nutze Datenstrukturen wie DataFrames (Pandas in Python) und Arrays (NumPy), um Daten zu laden und effizient zu verarbeiten.</li>
+</ul>
+<h4 id="12-kontext-und-quelle-der-daten">1.2 Kontext und Quelle der Daten</h4>
+<ul>
+<li>Woher kommen die Daten? Wann wurden sie gesammelt? Notiere den Kontext, um den Zweck der Daten zu verstehen und mögliche Verzerrungen zu erkennen.</li>
+</ul>
+<h4 id="13-metadaten-und-dokumentation">1.3 Metadaten und Dokumentation</h4>
+<ul>
+<li>Wenn verfügbar, überprüfe die Metadaten und die Dokumentation zum Datensatz. Das liefert oft wichtige Hinweise zu den Variablen und der Datenqualität.</li>
+</ul>
+<h3 id="schritt-2-datenbereinigung-und-vorverarbeitung">Schritt 2: Datenbereinigung und Vorverarbeitung</h3>
+<h4 id="21-fehlende-werte-behandeln">2.1 Fehlende Werte behandeln</h4>
+<ul>
+<li><strong>Optionen</strong>: Zeilen oder Spalten entfernen, fehlende Werte mit Durchschnitt oder Median auffüllen, oder Vorhersagemodelle nutzen, um die Werte zu schätzen.</li>
+</ul>
+<h4 id="22-duplikate-entfernen">2.2 Duplikate entfernen</h4>
+<ul>
+<li>Doppelte Einträge in deinem Datensatz verfälschen Ergebnisse. Entferne sie, um die Integrität deiner Daten zu sichern.</li>
+</ul>
+<h4 id="23-transformation-der-daten">2.3 Transformation der Daten</h4>
+<ul>
+<li><strong>Normalisierung</strong>: Skalierung der Daten für eine einheitliche Verteilung.</li>
+<li><strong>Kodierung</strong>: Umwandlung von Kategorien in numerische Werte (z.B. One-Hot-Codierung).</li>
+<li><strong>Zeitreihen</strong>: Konvertiere Datumsangaben für eine korrekte Analyse von Zeitdaten.</li>
+</ul>
+<h4 id="24-ausreier-identifizieren-und-behandeln">2.4 Ausreißer identifizieren und behandeln</h4>
+<ul>
+<li>Verwende Diagramme wie Boxplots oder statistische Tests (z.B. Z-Scores), um Ausreißer zu finden. Entschließe, ob du diese entfernst oder transformierst.</li>
+</ul>
+<h3 id="schritt-3-univariate-analyse-einzelne-variablen">Schritt 3: Univariate Analyse (Einzelne Variablen)</h3>
+<h4 id="31-deskriptive-statistik">3.1 Deskriptive Statistik</h4>
+<ul>
+<li>Führe grundlegende statistische Berechnungen durch (Mittelwert, Median, Modus), um zentrale Tendenzen und Streuung der Variablen zu verstehen.</li>
+</ul>
+<h4 id="32-visualisierungen-univariate">3.2 Visualisierungen (Univariate)</h4>
+<ul>
+<li><strong>Histogramme</strong>: Zum Veranschaulichen der Verteilung.</li>
+<li><strong>Boxplots</strong>: Zeigen Verteilung und Ausreißer.</li>
+<li><strong>Balkendiagramme</strong>: Für die Häufigkeit von Kategorien.</li>
+</ul>
+<h3 id="schritt-4-bivariate-und-multivariate-analyse-zusammenhange">Schritt 4: Bivariate und multivariate Analyse (Zusammenhänge)</h3>
+<h4 id="41-bivariate-analyse">4.1 Bivariate Analyse</h4>
+<ul>
+<li><strong>Scatterplots</strong>: Visualisiert die Beziehung zwischen zwei numerischen Variablen.</li>
+<li><strong>Korrelationsmatrix</strong>: Berechnet Korrelationen zwischen Variablen.</li>
+</ul>
+<h4 id="42-multivariate-analyse">4.2 Multivariate Analyse</h4>
+<ul>
+<li><strong>Paarplots</strong> und <strong>Heatmaps</strong>: Zeigen Beziehungen mehrerer Variablen.</li>
+<li><strong>PCA</strong> (Principal Component Analysis): Reduziert die Komplexität der Daten.</li>
+<li><strong>Clustering</strong>: Zum Gruppieren von Datenpunkten basierend auf Ähnlichkeiten.</li>
+</ul>
+<h4 id="43-wechselwirkungen-erkennen">4.3 Wechselwirkungen erkennen</h4>
+<ul>
+<li>Achte auf Wechselwirkungen zwischen Variablen, die möglicherweise auf komplexe Abhängigkeiten oder Multikollinearität hinweisen.</li>
+</ul>
+<h3 id="schritt-5-einblicke-und-schlussfolgerungen-ziehen">Schritt 5: Einblicke und Schlussfolgerungen ziehen</h3>
+<h4 id="51-wichtige-erkenntnisse-zusammenfassen">5.1 Wichtige Erkenntnisse zusammenfassen</h4>
+<ul>
+<li>Notiere die wichtigsten Muster und Ausreißer. Welche Einblicke bieten deine Analysen?</li>
+</ul>
+<h4 id="52-visuelles-storytelling">5.2 Visuelles Storytelling</h4>
+<ul>
+<li>Nutze ansprechende Diagramme, um deine Ergebnisse zu kommunizieren. Erstelle klare Visualisierungen, die die Daten einfach und verständlich zusammenfassen.</li>
+</ul>
+<h4 id="53-entscheidungen-treffen">5.3 Entscheidungen treffen</h4>
+<ul>
+<li>Verwende die Erkenntnisse der EDA, um Hypothesen zu formulieren, strategische Entscheidungen zu treffen oder nächste Schritte für Modellierungen festzulegen.</li>
+</ul>
+<h4 id="54-dokumentation">5.4 Dokumentation</h4>
+<ul>
+<li>Dokumentiere die EDA-Schritte, Methoden und Ergebnisse vollständig, damit der Prozess nachvollziehbar und wiederholbar bleibt.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
