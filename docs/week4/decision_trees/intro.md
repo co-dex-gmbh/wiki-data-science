@@ -4,7 +4,29 @@ Entscheidungsbäume sind ein Werkzeug im Bereich des überwachten maschinellen L
 
 Das Besondere an Entscheidungsbäumen ist ihre einfache und intuitive Struktur. Sie bestehen aus einem Stammknoten, mehreren inneren Knoten (Entscheidungsknoten) und Blattknoten (Endknoten). Jeder Knoten repräsentiert dabei eine Frage oder Bedingung zu einem bestimmten Merkmal des Datensatzes, und die Verzweigungen geben die möglichen Antworten auf diese Frage an. Die Blattknoten stehen schließlich für die Ergebnisse oder Vorhersagen.
 
----
+![Entscheidungsbaum](https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/cdp/cf/ul/g/10/3c/Decision-Tree-Example.component.complex-narrative-xl-retina.ts=1665767756305.png/content/adobe-cms/de/de/topics/decision-trees/jcr:content/root/table_of_contents/body/content_section_styled/content-section-body/complex_narrative/items/content_group_1441304462/image)
+
+
+## Motivation
+Entscheidungsbäume bieten eine Möglichkeit, komplexe Entscheidungsprozesse auf eine klare und interpretierbare Weise abzubilden. Ihre visuelle Baumstruktur ermöglicht es, Entscheidungslogiken leicht zu verstehen und bietet Einblicke in die Daten, ohne komplexe mathematische Modelle zu fordern. Diese Flexibilität macht Entscheidungsbäume zu einem beliebten Werkzeug in verschiedenen Anwendungsbereichen, von der Klassifikation bis zur Regression. Mit ihrer Fähigkeit, sowohl numerische als auch kategoriale Daten zu handhaben, erfordern sie weniger Datenvorbereitungsaufwand und bieten gleichzeitig Robustheit gegenüber unterschiedlichen Skalierungen der Merkmale. Die Leichtigkeit ihrer Anpassung an nichtlineare Zusammenhänge und ihre Effizienz bei großen Datensätzen machen sie zu einer motivierenden Wahl für datengetriebene Entscheidungsfindung.
+
+## Begriffe
+
+**Wurzelknoten**: Der oberste Knoten im Baum, der die gesamte Bevölkerung darstellt, die in Untergruppen aufgeteilt werden soll.
+
+**Zweige**: Ein Zweig repräsentiert eine mögliche Antwort auf eine Funktion.
+
+**Blattknoten**: Ein Blattknoten repräsentiert eine Entscheidung oder ein Ergebnis. Es gibt keine untergeordneten Knoten.
+
+**Interne Knoten**: Ein interner Knoten repräsentiert eine Funktion, die eine Entscheidung trifft, wo der nächste Knoten zu finden ist.
+
+**Tiefe des Baumes**: Die Länge des längsten Pfades von der Wurzel bis zu einem Blatt.
+
+## Lernprozess
+Der Lernprozess von Entscheidungsbäumen basiert auf einer "Teile-und-Herrsche-Strategie", die durch eine "gierige" Suche optimale Teilungspunkte innerhalb des Baums ermittelt. Diese Aufteilung erfolgt rekursiv von oben nach unten, bis die meisten Datenpunkte bestimmten Klassen zugeordnet sind. Die Komplexität des Baums beeinflusst, ob alle Datenpunkte homogene Mengen oder gemischte Klassen repräsentieren. Kleine Bäume neigen dazu, reine Blattknoten zu erreichen, während größere Bäume zur Fragmentierung und möglicher Überanpassung neigen. Entsprechend dem Prinzip der Sparsamkeit in Occams Razor sollten Entscheidungsbäume die Komplexität nur dann erhöhen, wenn nötig, da die einfachste Erklärung oft die beste ist.
+
+Um Überanpassung zu vermeiden, wird üblicherweise "Zurechtschneiden" (Pruning) angewendet, indem unwichtige Zweige entfernt werden. Die Modellbewertung erfolgt oft durch Kreuzvalidierung. Ein weiterer Ansatz zur Erhaltung der Genauigkeit ist die Verwendung von Ensemble-Methoden wie dem Random-Forest-Algorithmus, der präzisere Vorhersagen ermöglicht, insbesondere wenn die einzelnen Bäume unkorreliert sind. Dieser Ansatz unterstreicht die Vielseitigkeit und Anpassungsfähigkeit von Entscheidungsbäumen in datengetriebenen Entscheidungsfindungsprozessen.
+
 
 ### **Wie funktionieren Entscheidungsbäume?**
 

@@ -1,4 +1,4 @@
-# Exkurs: Klassifikation und naive bayes
+# Klassifikation und naive bayes
 
 
 **Wir werden dieses Thema noch einmal behandeln, wenn wir mit Klassifikaton und Machine Learning anfangen.**

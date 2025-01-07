@@ -45,15 +45,34 @@ nav:
         - Transformation: week3/feature_engineering/transformation.md
         - Feature Extraction: week3/feature_engineering/feature_extraction.md
         - Erstellung neuer Features: week3/feature_engineering/new_features.md
-      - Exkurs Klassifikation:
-        - Einführung: week3/excourse_classification/intro.md
-        - Modelle trainieren: week3/excourse_classification/train_models.md
-        - Naive Bayes: week3/excourse_classification/naive_bayes.md
+      # - Exkurs Klassifikation:
+      #   - Einführung: week3/excourse_classification/intro.md
+      #   - Modelle trainieren: week3/excourse_classification/train_models.md
+      #   - Naive Bayes: week3/excourse_classification/naive_bayes.md
       - Ziele: week3/goals.md
-  - Woche 4:
-      - Ziele: week4/goals.md
-  - Woche 5:
-      - Ziele: week5/goals.md
+  - Woche 4 & 5:
+      - Einführung statistisches und maschinelles Lernen: 
+        - Modelle trainieren: week4/statistical_and_machine_learning/train_models.md
+        - Generalisierung: week4/statistical_and_machine_learning/generalization.md
+        - Test-Train Split: week4/statistical_and_machine_learning/test_train_split.md
+        - Distanzmetriken: week4/statistical_and_machine_learning/distance_metrics/distance_metrics.md
+        - Evaluation: week4/statistical_and_machine_learning/evaluation.md
+      - Entscheidungsbäume:
+        - Einführung: week4/decision_trees/intro.md
+        - Split Kriterium: week4/decision_trees/split-criteria.md
+        - Exkurs Random Forest: week4/decision_trees/random_forest.md
+      - Naive Bayes:
+        - Einführung: week4/naive_bayes/intro.md
+        - Naive Bayes: week4/naive_bayes/naive_bayes.md
+      - K-Means: week4/kmeans/k-means.md
+      - Lineare Regression: week4/linear_regression/linear_regression.md
+      - Ziele: 
+        - Einführung statistisches & maschinelles Lernen: week4/goals.md
+        - Dashboards: week5/goals.md
+      - Aufgaben:
+        - Car Features: week4/assignments/car_features.md
+  # - Woche 5:
+  #     - Ziele: week5/goals.md
   - Woche 6:
       - Ziele: week6/goals.md
   - Woche 7:
