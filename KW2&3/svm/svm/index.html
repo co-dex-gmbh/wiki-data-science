@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../../week3/goals/">
+        <link rel="prev" href="../../decision_trees/random_forest/">
       
       
-        <link rel="next" href="../generalization/">
+        <link rel="next" href="../../naive_bayes/intro/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Modelle trainieren - Data Science</title>
+        <title>SVM - Data Science</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#unser-erstes-modell-trainieren" class="md-skip">
+        <a href="#support-vector-machines" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Modelle trainieren
+              SVM
             
           </span>
         </div>
@@ -992,19 +992,17 @@
                 
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
         
           
           <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
@@ -1018,7 +1016,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_1">
             <span class="md-nav__icon md-icon"></span>
             Einführung statistisches und maschinelles Lernen
@@ -1029,30 +1027,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Modelle trainieren
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../statistical_and_machine_learning/train_models/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1061,77 +1039,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#date-aufteilen" class="md-nav__link">
-    <span class="md-ellipsis">
-      Date aufteilen
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modell-erstellen" class="md-nav__link">
-    <span class="md-ellipsis">
-      Modell erstellen
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modell-trainieren" class="md-nav__link">
-    <span class="md-ellipsis">
-      Modell trainieren
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modell-evaluieren" class="md-nav__link">
-    <span class="md-ellipsis">
-      Modell evaluieren
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Modell evaluieren">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#accuracy-score" class="md-nav__link">
-    <span class="md-ellipsis">
-      Accuracy Score
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1144,7 +1051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../generalization/" class="md-nav__link">
+      <a href="../../statistical_and_machine_learning/generalization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1165,7 +1072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../test_train_split/" class="md-nav__link">
+      <a href="../../statistical_and_machine_learning/test_train_split/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1186,7 +1093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../distance_metrics/distance_metrics/" class="md-nav__link">
+      <a href="../../statistical_and_machine_learning/distance_metrics/distance_metrics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1207,7 +1114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../evaluation/" class="md-nav__link">
+      <a href="../../statistical_and_machine_learning/evaluation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1339,17 +1246,19 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" checked>
         
           
           <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
@@ -1363,7 +1272,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_3">
             <span class="md-nav__icon md-icon"></span>
             SVM
@@ -1374,10 +1283,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../svm/svm/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    SVM
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1386,6 +1315,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wann-ist-eine-svm-geeignet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wann ist eine SVM geeignet?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mathematische-formulierung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathematische Formulierung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkliste" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checkliste
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referenzen-und-nachschlagmaterial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referenzen und Nachschlagmaterial
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2087,53 +2072,38 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#date-aufteilen" class="md-nav__link">
+  <a href="#wann-ist-eine-svm-geeignet" class="md-nav__link">
     <span class="md-ellipsis">
-      Date aufteilen
+      Wann ist eine SVM geeignet?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#modell-erstellen" class="md-nav__link">
+  <a href="#mathematische-formulierung" class="md-nav__link">
     <span class="md-ellipsis">
-      Modell erstellen
+      Mathematische Formulierung
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#modell-trainieren" class="md-nav__link">
+  <a href="#checkliste" class="md-nav__link">
     <span class="md-ellipsis">
-      Modell trainieren
+      Checkliste
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#modell-evaluieren" class="md-nav__link">
+  <a href="#referenzen-und-nachschlagmaterial" class="md-nav__link">
     <span class="md-ellipsis">
-      Modell evaluieren
+      Referenzen und Nachschlagmaterial
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Modell evaluieren">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#accuracy-score" class="md-nav__link">
-    <span class="md-ellipsis">
-      Accuracy Score
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2152,52 +2122,94 @@
                   
 
 
-<h1 id="unser-erstes-modell-trainieren">Unser erstes Modell trainieren</h1>
-<p>Der Ablauf, um ein Modell zu trainieren, ist in der Regel wie folgt:</p>
+<h1 id="support-vector-machines">Support Vector Machines</h1>
+<p>Support Vector Machines (SVM) sind maschinelle Lernmodelle, die in verschiedenen Anwendungsgebieten weit verbreitet sind. Ihre Beliebtheit gründet sich auf ihrer Fähigkeit, komplexe Entscheidungsgrenzen zu modellieren und gleichzeitig eine effiziente Verarbeitung großer Datenmengen zu ermöglichen. Die Motivation hinter Support Vector Machines liegt in ihrer Fähigkeit, Muster in Daten zu erkennen und Klassifikationsprobleme präzise zu lösen. SVMs zeichnen sich durch ihre Robustheit und Flexibilität aus, wodurch sie sowohl für binäre als auch für mehrklassige Klassifikationsaufgaben geeignet sind. Ihr fundamentales Prinzip besteht darin, eine optimale Trennebene zwischen verschiedenen Klassen zu finden, wobei der Abstand zu den nächsten Datenpunkten maximiert wird. Diese Eigenschaft macht SVMs zu einem bevorzugten Werkzeug in Bereichen wie Mustererkennung, Bildverarbeitung, Textanalyse und vielen anderen Anwendungen im Bereich des maschinellen Lernens.</p>
+<p>Die SVM ist ein Modell aus dem überwachten Lernen. Wir schauen uns die SVM als Klassifikationsmodell an. Sie kann allerdings auch für Regressionen verwendet werden.</p>
+<p><img alt="Grafik SVM" src="https://miro.medium.com/v2/resize:fit:1100/1*XE9jt0r1yAW8LnliQ3mllQ.png" /></p>
+<h2 id="wann-ist-eine-svm-geeignet">Wann ist eine SVM geeignet?</h2>
+<p>Support Vector Machines (SVMs) sind besonders geeignet, wenn bestimmte Merkmale in den Daten hervorgehoben werden sollen oder wenn die Daten hochdimensional sind. Hier sind einige Szenarien, in denen die Verwendung von SVMs angebracht sein könnte:</p>
 <ol>
-<li><strong>Daten laden</strong>: Lade die Daten, die du für das Training des Modells verwenden möchtest.</li>
-<li><strong>Daten vorbereiten</strong>: Bereite die Daten so auf, dass sie von einem Modell verarbeitet werden können.</li>
-<li><strong>Daten aufteilen</strong>: Teile die Daten in Trainings- und Testdaten auf.</li>
-<li><strong>Modell erstellen</strong>: Wähle ein Modell aus, das du trainieren möchtest.</li>
-<li><strong>Modell trainieren</strong>: Trainiere das Modell mit den vorbereiteten Daten.</li>
-<li><strong>Modell evaluieren</strong>: Bewerte das Modell, um zu sehen, wie gut es funktioniert.</li>
-<li><strong>Modell anwenden</strong>: Wende das trainierte Modell auf neue Daten an, um Vorhersagen zu treffen.</li>
+<li>
+<p><strong>Klassifikation mit klaren Entscheidungsgrenzen:</strong>
+   SVMs eignen sich gut für Aufgaben, bei denen klare Entscheidungsgrenzen zwischen verschiedenen Klassen erforderlich sind. Ihr Hauptziel ist es, eine Trennebene zu finden, die den maximalen Abstand zu den nächstgelegenen Datenpunkten jeder Klasse aufweist.</p>
+</li>
+<li>
+<p><strong>Hochdimensionale Daten:</strong>
+   SVMs sind effektiv, wenn der Datensatz viele Merkmale oder Dimensionen aufweist. Sie können gut mit hochdimensionalen Daten umgehen, ohne anfällig für den sogenannten "Fluch der Dimensionalität" zu sein.</p>
+</li>
+<li>
+<p><strong>Daten mit nicht-linearen Strukturen:</strong>
+   SVMs können durch den Einsatz von Kernel-Tricks auch nicht-lineare Entscheidungsgrenzen modellieren. Das macht sie geeignet für Aufgaben, bei denen die Beziehung zwischen Eingangsmerkmalen und Zielvariablen komplex und nicht linear ist.</p>
+</li>
+<li>
+<p><strong>Kleine Datensätze mit hoher Dimensionalität:</strong>
+   Wenn die Anzahl der Beobachtungen relativ gering ist, aber die Anzahl der Merkmale hoch ist, können SVMs aufgrund ihrer Fähigkeit, mit hochdimensionalen Daten umzugehen, gute Ergebnisse liefern.</p>
+</li>
+<li>
+<p><strong>Anwendungen mit klaren Trennkriterien:</strong>
+   SVMs eignen sich gut für Anwendungen, bei denen eine klare Entscheidung oder Trennung zwischen verschiedenen Klassen erforderlich ist, wie beispielsweise in der Gesichtserkennung oder bei der Erkennung von Anomalien.</p>
+</li>
+<li>
+<p><strong>Text- und Bildklassifikation:</strong>
+   In Anwendungen wie Textklassifikation (z. B. Spam-Erkennung) und Bildklassifikation (z. B. Objekterkennung) haben sich SVMs als leistungsstark erwiesen.</p>
+</li>
+<li>
+<p><strong>Geriner Datenumfang</strong>
+   SVMs sind gut geeignet, wenn der Datensatz relativ klein ist, da sie mit wenigen Daten gut funktionieren können.</p>
+</li>
 </ol>
-<h2 id="date-aufteilen">Date aufteilen</h2>
-<p>Damit wir wissen, ob unser Modell gut funktioniert, müssen wir es testen. Dazu teilen wir unsere Daten in zwei Teile auf: Trainingsdaten und Testdaten. Die Trainingsdaten verwenden wir, um das Modell zu trainieren, und die Testdaten verwenden wir, um das Modell zu evaluieren. Für das Aufteilen der Daten wird oftmal ein Verhältnis von 80% Trainingsdaten und 20% Testdaten verwendet. </p>
-<p>Je nach größe des Datensets, Verteilung Samples und den Anforderungen an das Modell kann dieses Verhältnis jedoch variieren. </p>
-<p>In Python können wir die Funktion <code>train_test_split</code> aus dem Modul <code>sklearn.model_selection</code> verwenden, um die Daten aufzuteilen. </p>
-<pre><code class="language-python">from sklearn.model_selection import train_test_split
-
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-</code></pre>
-<p>Dabei sind:
-- <code>X</code> die Features (Eigenschaften) der Daten
-- <code>y</code> die Zielvariable (was wir vorhersagen wollen)
-- <code>test_size</code> der Anteil der Testdaten (hier 20%)
-- <code>random_state</code> ein Wert, der festlegt, wie die Daten aufgeteilt werden. Wenn du den gleichen Wert verwendest, erhältst du bei jedem Durchlauf die gleiche Aufteilung.
-- <code>X_train</code>, <code>X_test</code> die aufgeteilten Features
-- <code>y_train</code>, <code>y_test</code> die aufgeteilten Zielvariablen</p>
-<h2 id="modell-erstellen">Modell erstellen</h2>
-<p>Nachdem wir die Daten aufgeteilt haben, können wir ein Modell erstellen. Dazu wählen wir ein Modell aus, das wir trainieren möchten. Es gibt viele verschiedene Modelle, die für verschiedene Aufgaben geeignet sind. In unserem Fall verwenden wir den Gaussian Naive Bayes Klassifikator, der für Klassifikationsprobleme geeignet ist.</p>
-<pre><code class="language-python">from sklearn.naive_bayes import GaussianNB
-
-model = GaussianNB()
-</code></pre>
-<h2 id="modell-trainieren">Modell trainieren</h2>
-<p>Nachdem wir das Modell erstellt haben, können wir es mit den Trainingsdaten trainieren. Dazu verwenden wir die <code>fit</code> Methode des Modells.</p>
-<pre><code class="language-python">model.fit(X_train, y_train)
-</code></pre>
-<h2 id="modell-evaluieren">Modell evaluieren</h2>
-<p>Nachdem wir das Modell trainiert haben, können wir es mit den Testdaten evaluieren. Dazu verwenden wir den <code>accuracy_score</code> aus dem Modul <code>sklearn.metrics</code>, der die Genauigkeit des Modells berechnet.</p>
-<pre><code class="language-python">from sklearn.metrics import accuracy_score
-
-y_pred = model.predict(X_test)
-accuracy = accuracy_score(y_test, y_pred)
-print(f'Genauigkeit: {accuracy}')
-</code></pre>
-<h3 id="accuracy-score">Accuracy Score</h3>
-<p>Die Genauigkeit (Accuracy) ist eine Metrik, die angibt, wie gut ein Modell funktioniert. Sie berechnet sich als der Anteil der korrekt vorhergesagten Instanzen an der Gesamtzahl der Instanzen. Die Genauigkeit liegt zwischen 0 und 1, wobei 1 für 100% Genauigkeit steht.</p>
+<h2 id="mathematische-formulierung">Mathematische Formulierung</h2>
+<p>Siehe <a href="https://scikit-learn.org/stable/modules/svm.html#svc">hier</a></p>
+<ul>
+<li>Die SVM maximiert den Abstand zwischen der separierenden Hyperebene und den nächstgelegenen Klassfikationspunkten (Support Vektoren)</li>
+<li>Die Hyperebene wird durch die Gleichung <span class="arithmatex">\(w^Tx + b = 0\)</span> beschrieben</li>
+<li>Die Klassifikation erfolgt durch die Vorhersage des Vorzeichens von <span class="arithmatex">\(w^Tx + b\)</span></li>
+<li>Um die SVM auch auf nicht linear separierbare Daten anwenden zu können, wird die sog. Soft-Margin SVM verwendet. Hierbei wird eine Strafterm eingeführt, der die Anzahl der falsch klassifizierten Punkte minimiert. Dieser Strafterm wird durch den Parameter <span class="arithmatex">\(C\)</span> gesteuert. Je größer <span class="arithmatex">\(C\)</span> ist, desto mehrwerden falsch klassifizierte Punkte bestraft.</li>
+<li>
+<p>Sind die in der Ausgangsdimension nicht linear separierbar, kann der Kernel-Trick verwendet werden, um die Daten in eine höhere Dimension zu transformieren, in der sie linear separierbar sind. Die SVM wird dann in dieser höheren Dimension trainiert und die Vorhersage erfolgt in der ursprünglichen Dimension.
+<img alt="SVM Aufbau" src="https://i.stack.imgur.com/FsYi6.png" /></p>
+</li>
+<li>
+<p>In der Regel wird der RBF Kernel <span class="arithmatex">\(K(x,y)=exp(-\frac{\| x - y \|}{2*\sigma^2})\)</span> verwendet.</p>
+</li>
+<li>Weitere Kernel sind der <blockquote>
+<ul>
+<li>lineare Kernel <span class="arithmatex">\(K(x,y)=\langle x^Ty\rangle\)</span></li>
+<li>Polynomiale Kernel <span class="arithmatex">\(K(x,y)= \gamma \langle x^Ty \rangle + r^d\)</span></li>
+<li>Sigmoid Kernel <span class="arithmatex">\(K(x,y)=tanh(\gamma \langle x^Ty \rangle + r)\)</span></li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p><img alt="Kernel" src="https://miro.medium.com/v2/resize:fit:838/1*gXvhD4IomaC9Jb37tzDUVg.png" /></p>
+<p>Technisch wird das Optimierungsproblem der SVM durch eine Lagrange Multiplikation umgeschrieben. Dadurch entstehen <span class="arithmatex">\(\alpha_i\)</span>, welche als Ein- bzw. Ausschalter für die Gewichtung einer Vorhersage bei der Optimierung interpretiert werden können. Die Gewichtung der Vorhersage erfolgt durch die Summe der Produkte aus <span class="arithmatex">\(\alpha_i\)</span> und dem Kernel <span class="arithmatex">\(K(x_i,x)\)</span>, also <span class="arithmatex">\(\sum_{i=1}^n \alpha_i K(x_i,x)\)</span>. </p>
+<p>Bei der Verwendung eines Soft-Margins werden Schlupfvariablen <span class="arithmatex">\(\xi_i\)</span> einfedührt, welche bei falschen Klassifizierungen den Einflus des Fehlers redizieren können. Dadurch werden beim Training Fehler zugelassen. Die Gewichtung der Fehler erfolgt dann durch <span class="arithmatex">\(C \sum_{i=1}^n \xi_i\)</span>. <span class="arithmatex">\(C\)</span> steuert also, wie Stark Fehler gewichtet werden. Je größer <span class="arithmatex">\(C\)</span> ist, desto stärker werden Fehler gewichtet.</p>
+<p>Der Parameter Gamma aus den Kernel-Funktionen gewichtet ebenfalls, wie stark die einzelnen Punkte in der Vorhersage gewichtet werden. Je größer Gamma ist, desto stärker werden die einzelnen Punkte gewichtet. Dies kann zu einer Überanpassung führen.</p>
+<p>In der Praxis sollte Gammach nach Möglichkeit gering gehalten werden, um eine Überanpassung zu vermeiden. <span class="arithmatex">\(C\)</span> sollte so gewählt werden, dass die Anzahl der falsch klassifizierten Punkte möglichst gering ist. Dies kann durch eine Kreuzvalidierung ermittelt werden. Gute Parameterkombinationen können beispielsweise durch eine GridSearch ermittelt werden.</p>
+<p>Aufgrund der Konstruktion der SVM kann diese zunächst nur in 2 Klassen (binär) unterscheiden. Um trotzdem mehr als 2 Klassen behandeln zu können, gibt es verschiedene Ansätze. Diese vergleichen die einzelenen Klasse untereinander oder fassen sie zu temporär zu Oberklassen zusamme. Eine Übersicht zu zwei verbreiteten Ansätzen findet ihr <a href="/machine_learning_basics/klassifikationen#multi-klassen-klassifikation">hier</a>.</p>
+<h2 id="checkliste">Checkliste</h2>
+<p><strong>Checkliste für SVM (Support Vector Machines)-Teilnehmer:</strong></p>
+<ol>
+<li>[ ] Ich kann den Zweck von SVM in der maschinellen Lernens erklären.</li>
+<li>[ ] Ich verstehe das Konzept der Trennfläche und wie SVM Entscheidungsgrenzen erstellt.</li>
+<li>[ ] Ich verstehe, wie lineare und nichtlineare SVM funktionieren.</li>
+<li>[ ] Ich kann den Begriff der Margen und Support-Vektoren in SVM erklären.</li>
+<li>[ ] Ich verstehe die Rolle von Kernels in nichtlinearen SVMs.</li>
+<li>[ ] Ich kann SVM-Modelle für Klassifikation erstellen.</li>
+<li>[ ] Ich kann die Auswirkungen von SVM-Parametern wie dem C-Parameter und dem Kerneltyp erklären.</li>
+<li>[ ] Ich kann den Unterschied zwischen Soft Margin und Hard Margin SVM erklären.</li>
+<li>[ ] Ich verstehe, wie man den C-Parameter einstellt, um den Trade-off zwischen Fehler und Margin zu steuern.</li>
+<li>[ ] Ich kann SVM für Mehrklassen-Klassifikation anwenden, z.B., durch One-vs-One oder One-vs-Rest Ansätze.</li>
+<li>[ ] Ich verstehe, wie SVM mit mehreren Klassen umgeht.</li>
+<li>[ ] Ich kann die Vor- und Nachteile von SVM im Vergleich zu anderen maschinellen Lernalgorithmen erklären.</li>
+<li>[ ] Ich verstehe, in welchen Situationen SVM besonders effektiv ist.</li>
+</ol>
+<h2 id="referenzen-und-nachschlagmaterial">Referenzen und Nachschlagmaterial</h2>
+<ul>
+<li><a href="https://scikit-learn.org/stable/modules/svm.html">Support Vector Machines in scikit-learn</a></li>
+<li><a href="https://www.analyticsvidhya.com/blog/2021/10/support-vector-machinessvm-a-complete-guide-for-beginners/">Erklärung SVM und Kernel</a></li>
+<li><a href="https://www.youtube.com/watch?v=ny1iZ5A8ilA">Youtube Video zu SVM</a></li>
+</ul>
 
 
 
