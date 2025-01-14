@@ -1,0 +1,2819 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../split-criteria/">
+      
+      
+        <link rel="next" href="../../svm/svm/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+    
+    
+      
+        <title>Exkurs Random Forest - Data Science</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#noch-exkurs-random-forests" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Data Science" class="md-header__button md-logo" aria-label="Data Science" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Data Science
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Exkurs Random Forest
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Data Science" class="md-nav__button md-logo" aria-label="Data Science" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Data Science
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FastAPI
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            FastAPI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fastapi/intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fastapi/first_steps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Erste Schritte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fastapi/data_models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datenmodelle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fastapi/sqlmodel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SQLModel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fastapi/task/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aufgabe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Analysis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Data Analysis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data_analysis/intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data_analysis/data_visualization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datenvisualisierung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data_analysis/understand_datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datensätze verstehen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data_analysis/eda_steps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EDA Schritte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data_analysis/tasks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aufgaben
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    KW 49 und 50
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            KW 49 und 50
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW49-50/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Überblick
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Cleaning
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Data Cleaning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW49-50/data_processing/intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW49-50/data_processing/missing_values/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Missing Values
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW49-50/data_processing/outliers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Outliers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW49-50/data_processing/duplicates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Duplikate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW49-50/data_processing/type_conversion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Konvertierung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW49-50/goals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ziele
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    KW 51
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            KW 51
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Feature Engineering
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Feature Engineering
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW51/feature_engineering/encoding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Encoding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW51/feature_engineering/scaling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scaling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW51/feature_engineering/transformation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transformation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW51/feature_engineering/feature_extraction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Feature Extraction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW51/feature_engineering/new_features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Erstellung neuer Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW51/goals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ziele
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    KW 2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            KW 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Einführung statistisches und maschinelles Lernen
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Einführung statistisches und maschinelles Lernen
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statistical_and_machine_learning/train_models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modelle trainieren
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statistical_and_machine_learning/generalization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Generalisierung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statistical_and_machine_learning/test_train_split/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test-Train Split
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statistical_and_machine_learning/distance_metrics/distance_metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exkurs Distanzmetriken
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statistical_and_machine_learning/evaluation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exkurs Evaluation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Entscheidungsbäume
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Entscheidungsbäume
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../split-criteria/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Split Kriterium
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Exkurs Random Forest
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Exkurs Random Forest
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#erstellung-eines-random-forests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Erstellung eines Random Forests
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exkurs-bootstrapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exkurs: Bootstrapping
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exkurs: Bootstrapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exkurs-baggingbootstrap-aggregating" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exkurs: Bagging(Bootstrap Aggregating)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kombination-von-entscheidungsbaumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kombination von Entscheidungsbäumen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#random-forest-vs-decision-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Random Forest vs Decision Tree
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referenzen-und-nachschlagewerke" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referenzen und Nachschlagewerke
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SVM
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            SVM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../svm/svm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SVM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exkurs Naive Bayes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            Exkurs Naive Bayes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../naive_bayes/intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../naive_bayes/naive_bayes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Naive Bayes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kmeans/k-means/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exkurs K-Means
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linear_regression/linear_regression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lineare Regression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ziele
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_7">
+            <span class="md-nav__icon md-icon"></span>
+            Ziele
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../goals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung statistisches & maschinelles Lernen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../week5/goals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dashboards
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_8" id="__nav_6_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aufgaben
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_8">
+            <span class="md-nav__icon md-icon"></span>
+            Aufgaben
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assignments/car_features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Car Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    KW 3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            KW 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW3/intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung Dashboards
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Streamlit
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Streamlit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW3/streamlit/intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW3/streamlit/structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Struktur
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW3/streamlit/visualization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visualisierungen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW3/streamlit/layout/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Layout
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW3/streamlit/data-handling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Umgang mit Daten
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW3/streamlit/interactivity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interaktivität
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW3/streamlit/caching/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Caching
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW3/streamlit/multipage-apps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multipage Apps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW3/streamlit/secrets-authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secrets und Authentication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW3/streamlit/outlook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ausblick
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aufgaben
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            Aufgaben
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW3/assignments/streamlit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Streamlit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    KW 4
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            KW 4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../week6/goals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ziele
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    KW 5
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            KW 5
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../week7/goals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ziele
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    KW 6
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            KW 6
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../week8/goals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ziele
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    KW 7
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            KW 7
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../week9/goals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ziele
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Woche 10
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Woche 10
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW49-500/goals.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ziele
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Woche 11
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Woche 11
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../KW49-501/goals.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ziele
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#erstellung-eines-random-forests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Erstellung eines Random Forests
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exkurs-bootstrapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exkurs: Bootstrapping
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exkurs: Bootstrapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exkurs-baggingbootstrap-aggregating" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exkurs: Bagging(Bootstrap Aggregating)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kombination-von-entscheidungsbaumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kombination von Entscheidungsbäumen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#random-forest-vs-decision-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Random Forest vs Decision Tree
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referenzen-und-nachschlagewerke" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referenzen und Nachschlagewerke
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="noch-exkurs-random-forests">Noch Exkurs: Random Forests</h1>
+<p>Random Forests sind eine Ensemble-Lernmethode im Bereich des maschinellen Lernens. Sie gehören zur Familie der Entscheidungsbäume und werden für Klassifikationsund Regressionsaufgaben verwendet. Der Hauptgedanke hinter Random Forests ist, mehrere Entscheidungsbäume zu erstellen und ihre Vorhersagen zu kombinieren, um robustere und genaue Modelle zu erhalten. Einen Überblick zu Entscheidungsbäumen findest du <a href="/Algorithmen/decision-trees">hier</a>.</p>
+<p><img alt="Random Forest" src="https://av-eks-blogoptimized.s3.amazonaws.com/33019random-forest-algorithm287548.png" /></p>
+<h2 id="erstellung-eines-random-forests">Erstellung eines Random Forests</h2>
+<p>Ein Random Forest besteht aus einer großen Anzahl von Entscheidungsbäumen. Jeder dieser Bäume ist ein Klassifikator, der eine Entschiedung für eine Teilmeng der Ausgangsklassen trifft. Die Vorhersage des Random Forests ist die Klasse, die von den meisten Bäumen vorhergesagt wird. Die Vorhersage eines einzelnen Baumes ist möglicherweise nicht sehr genau, aber wenn wir die Vorhersagen vieler Bäume kombinieren, erhalten wir eine Vorhersage, die genauer ist und weniger anfällig für Rauschen ist. Die Erstellung eines Random Forests kann in mehrere Schritte aufgeteilt werden.</p>
+<ol>
+<li>
+<p><strong>Datensätze auswählen (Bootstrap Aggregating - Bagging):</strong>
+   Für jeden Baum aus dem Trainingsdatensatz werden zufällige Stichproben (mit Wiederholung) erstellt. Dies bedeutet, dass einige Datenpunkte mehrfach in einer Stichprobe auftreten können, während andere möglicherweise überhaupt nicht enthalten sind.</p>
+</li>
+<li>
+<p><strong>Entscheidungsbaum erstellen:</strong>
+   Für jede erstellte Stichprobe wird ein Entscheidungsbaum trainiert. Bei jedem Schritt des Baumwachstums wird nur eine zufällige Teilmenge der Features berücksichtigt, um die Unabhängigkeit der Bäume sicherzustellen.</p>
+</li>
+<li>
+<p><strong>Ensemble bilden:</strong>
+   Die erstellten Entscheidungsbäume bilden das Ensemble des Random Forests.</p>
+</li>
+<li>
+<p><strong>Vorhersage erstellen:</strong>
+   Für eine neue Instanz wird die Vorhersage durch Aggregation der Vorhersagen aller Bäume erstellt. Bei Klassifikationsaufgaben erfolgt dies oft durch Mehrheitsabstimmung, und bei Regressionsaufgaben wird der Durchschnitt der Vorhersagen genommen.</p>
+</li>
+<li>
+<p><strong>Out-of-Bag (OOB) Bewertung:</strong>
+   Da verschiedene Bäume verschiedene Teilmengen der Daten sehen, können Datenpunkte, die in einem Baum nicht verwendet wurden, für die Bewertung der Modellgenauigkeit verwendet werden. Diese Technik wird als Out-of-Bag (OOB) Bewertung bezeichnet.</p>
+</li>
+<li>
+<p><strong>Feature Importance:</strong>
+   Random Forests bieten eine Möglichkeit zur Berechnung der Bedeutung einzelner Features. Dies geschieht durch die Analyse, wie sehr sich die Genauigkeit des Modells ändert, wenn die Werte eines Features permutiert werden.</p>
+</li>
+<li>
+<p><strong>Anzahl der Bäume und Hyperparameter:</strong>
+   Die Anzahl der Bäume (Estimators) und andere Hyperparameter des Random Forests können je nach Anwendungsfall angepasst werden, um die Modellleistung zu optimieren.</p>
+</li>
+</ol>
+<p>Der Schlüsselaspekt eines Random Forests ist die Randomisierung sowohl in Bezug auf die Daten (durch Bagging) als auch in Bezug auf die Features (durch zufällige Auswahl von Features bei jedem Split des Entscheidungsbaums). Diese Randomisierung trägt dazu bei, Overfitting zu reduzieren und die Robustheit des Modells zu verbessern.</p>
+<h2 id="exkurs-bootstrapping">Exkurs: Bootstrapping</h2>
+<p>Bootstrapping ist eine statistische Methode, die dazu dient, Schätzungen der Verteilung von Schätzern zu erstellen. Der Begriff "Bootstrapping" leitet sich von der Vorstellung ab, dass man sich an den eigenen Stiefelriemen zieht, was darauf hinweist, dass man aus den vorhandenen Daten selbst weitere Stichproben erstellt.</p>
+<p>Der Bootstrapping-Prozess erfolgt in folgenden Schritten:</p>
+<ol>
+<li>
+<p><strong>Stichprobe erstellen:</strong>
+   Aus einem vorhandenen Datensatz wird eine zufällige Stichprobe mit Wiederholung gezogen. Das bedeutet, dass bestimmte Datenpunkte mehrmals in der Stichprobe erscheinen können, während andere möglicherweise überhaupt nicht ausgewählt werden.</p>
+</li>
+<li>
+<p><strong>Schätzung berechnen:</strong>
+   Mit der erstellten Stichprobe wird eine Schätzung (z. B. Mittelwert, Median, Standardabweichung) des interessierenden Parameters berechnet.</p>
+</li>
+<li>
+<p><strong>Schritte wiederholen:</strong>
+   Die Schritte 1 und 2 werden viele Male wiederholt (typischerweise Tausende von Malen), um eine Verteilung der Schätzungen zu erstellen.</p>
+</li>
+<li>
+<p><strong>Verteilung analysieren:</strong>
+   Durch Analyse der Verteilung der Schätzungen können Konfidenzintervalle und andere statistische Eigenschaften des geschätzten Parameters abgeleitet werden.</p>
+</li>
+</ol>
+<p>Bootstrapping ist besonders nützlich, wenn die analytischen Lösungen kompliziert oder nicht verfügbar sind. Es ermöglicht auch, die Unsicherheit von Schätzern zu quantifizieren, indem man mehrere Stichproben aus denselben Daten erstellt. Bootstrapping wird in verschiedenen Bereichen der Statistik und des maschinellen Lernens verwendet, um bessere Schätzungen von Parametern und deren Unsicherheiten zu erhalten.</p>
+<p><strong>Beispiel:</strong></p>
+<pre><code class="language-python">from sklearn.utils import resample
+from sklearn.datasets import load_iris
+
+# Lade den Iris-Datensatz für das Beispiel
+iris = load_iris()
+X = iris.data
+y = iris.target
+
+# Beispiel für Bootstrapping
+def bootstrap_example(data):
+    # Erzeuge eine Bootstrap-Stichprobe
+    bootstrap_sample = resample(data, replace=True, n_samples=len(data))
+    print(&quot;Originaldaten:&quot;, data[:5])
+    print(&quot;Bootstrapped Stichprobe:&quot;, bootstrap_sample[:5])
+
+# Bootstrapping-Beispiel
+print(&quot;Bootstrapping-Beispiel:&quot;)
+bootstrap_example(X)
+</code></pre>
+<h3 id="exkurs-baggingbootstrap-aggregating">Exkurs: Bagging(Bootstrap Aggregating)</h3>
+<p>Bagging (Bootstrap Aggregating) ist eine Ensemble-Lernmethode im Bereich des maschinellen Lernens. Es basiert auf dem Prinzip des Bootstrapping und wird verwendet, um die Vorhersagegenauigkeit und Stabilität von Modellen zu verbessern, insbesondere von Entscheidungsbäumen.</p>
+<p>Hier sind die Grundprinzipien des Bagging:</p>
+<ol>
+<li>
+<p><strong>Bootstrapping:</strong>
+   Es werden zufällige Stichproben (mit Wiederholung) aus dem Trainingsdatensatz gezogen, um mehrere "bootstrapped" Datensätze zu erstellen.</p>
+</li>
+<li>
+<p><strong>Modelle erstellen:</strong>
+   Auf jedem der bootstrapped Datensätze wird ein separates Modell (typischerweise ein Entscheidungsbaum) trainiert. Da die Datensätze unterschiedlich sind, werden auch die erstellten Modelle unterschiedlich sein.</p>
+</li>
+<li>
+<p><strong>Aggregation der Vorhersagen:</strong>
+   Die Vorhersagen der einzelnen Modelle werden kombiniert, um eine Gesamtvorhersage zu erstellen. Bei Klassifikationsaufgaben geschieht dies oft durch Mehrheitsabstimmung, und bei Regressionsaufgaben wird der Durchschnitt der Vorhersagen genommen.</p>
+</li>
+</ol>
+<p>Der Hauptvorteil von Bagging liegt darin, dass es die Varianz des Modells reduziert, indem es die Modelle auf unterschiedlichen Daten trainiert und dann ihre Vorhersagen aggregiert. Dies hilft, Overfitting zu minimieren und die Modellleistung auf neuen Daten zu verbessern.</p>
+<p>Random Forests, einer der bekanntesten Anwendungsbereiche von Bagging, verwenden diese Methode, indem sie mehrere Entscheidungsbäume auf unterschiedlichen Teilmengen des Datensatzes trainieren und deren Vorhersagen kombinieren. Bagging kann jedoch auch mit anderen Basisalgorithmen verwendet werden.</p>
+<p><strong>Beispiel:</strong></p>
+<pre><code class="language-python">from sklearn.ensemble import BaggingClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+
+# Lade den Iris-Datensatz für das Beispiel
+iris = load_iris()
+X = iris.data
+y = iris.target
+
+# Beispiel für Bagging mit Entscheidungsbaum
+def bagging_example(X_train, X_test, y_train, y_test):
+    # Erzeuge Entscheidungsbaum-Modell
+    base_model = DecisionTreeClassifier(random_state=42)
+
+    # Erzeuge Bagging-Modell
+    bagging_model = BaggingClassifier(base_model, n_estimators=10, random_state=42)
+
+    # Trainiere das Bagging-Modell
+    bagging_model.fit(X_train, y_train)
+
+    # Vorhersagen
+    predictions = bagging_model.predict(X_test)
+
+    # Auswertung der Genauigkeit
+    accuracy = accuracy_score(y_test, predictions)
+    print(&quot;Bagging-Modell Genauigkeit:&quot;, accuracy)
+
+# Aufteilung der Daten in Trainings- und Testsets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Bagging-Beispiel mit Entscheidungsbaum
+print(&quot;\nBagging-Beispiel:&quot;)
+bagging_example(X_train, X_test, y_train, y_test)
+</code></pre>
+<h2 id="kombination-von-entscheidungsbaumen">Kombination von Entscheidungsbäumen</h2>
+<p>Bei einem Random Forest gibt es verschiedene Möglichkeiten, die Vorhersagen der einzelnen Bäume zu kombinieren. Diese Kombinationsstrategien sind wichtig, um eine robuste und genaue Gesamtvorhersage zu erstellen. Hier sind die Hauptmethoden:</p>
+<ol>
+<li>
+<p><strong>Mehrheitsabstimmung (Classification):</strong>
+   In Klassifikationsaufgaben wird die Klasse ausgewählt, die von den meisten Bäumen vorhergesagt wird. Dies wird als Mehrheitsabstimmung oder Mehrheitsregel bezeichnet. Die Klasse mit den meisten Stimmen wird als endgültige Vorhersage verwendet.</p>
+</li>
+<li>
+<p><strong>Durchschnitt (Regression):</strong>
+   In Regressionsaufgaben wird der Durchschnitt der Vorhersagen aller Bäume genommen. Dies führt zu einer stabilen und konsistenten Vorhersage, die weniger anfällig für Ausreißer ist.</p>
+</li>
+<li>
+<p><strong>Gewichtete Kombination:</strong>
+   Es besteht die Möglichkeit, den Vorhersagen der Bäume Gewichte zuzuweisen. Bäume mit höherer Genauigkeit oder Vertrauenswürdigkeit können höhere Gewichte erhalten. Dies ermöglicht eine feinere Steuerung über den Einfluss einzelner Bäume.</p>
+</li>
+<li>
+<p><strong>Soft Voting (Classification):</strong>
+   Anstelle einer harten Mehrheitsabstimmung, bei der einfach die Klasse mit den meisten Stimmen ausgewählt wird, kann auch eine weiche Mehrheitsabstimmung durchgeführt werden. Dabei werden die Wahrscheinlichkeiten für jede Klasse aus den Bäumen aggregiert, und die Klasse mit der höchsten aggregierten Wahrscheinlichkeit wird ausgewählt.</p>
+</li>
+<li>
+<p><strong>Out-of-Bag (OOB) Schätzung:</strong>
+   Bei der Trainingsphase des Random Forests wird für jeden Baum eine OOB-Schätzung erstellt, indem der Baum auf den nicht für die Stichprobe ausgewählten Daten getestet wird. Die Vorhersagen aller Bäume werden dann kombiniert, um eine Gesamtschätzung zu erhalten.</p>
+</li>
+</ol>
+<p>Die Wahl der Kombinationsstrategie hängt von der Art des Problems (Klassifikation oder Regression) und dem Anwendungsfall ab. In der Praxis hat sich die Mehrheitsabstimmung als effektive Methode für Klassifikationsprobleme und der Durchschnitt für Regressionsprobleme bewährt.</p>
+<h2 id="random-forest-vs-decision-tree">Random Forest vs Decision Tree</h2>
+<p>Die Wahl zwischen einem Random Forest und einem einzelnen Entscheidungsbaum hängt von den Anforderungen des Problems, der Größe des Datensatzes und den verfügbaren Rechenressourcen ab. In vielen Fällen bieten Random Forests jedoch eine robuste Lösung mit verbesserter Vorhersagegenauigkeit.</p>
+<p><strong>Vorteile von Random Forests gegenüber Entscheidungsbäumen:</strong></p>
+<ol>
+<li>
+<p><strong>Reduziert Overfitting:</strong>
+   Random Forests sind weniger anfällig für Overfitting im Vergleich zu einzelnen Entscheidungsbäumen. Die Randomisierung bei der Erstellung von Teilbäumen trägt dazu bei, dass die Gesamtvorhersage des Modells robuster und besser verallgemeinerungsfähig ist.</p>
+</li>
+<li>
+<p><strong>Höhere Genauigkeit:</strong>
+   In der Regel liefern Random Forests aufgrund ihrer Ensemble-Natur eine höhere Genauigkeit bei Vorhersagen. Indem sie mehrere Entscheidungsbäume kombinieren, reduzieren sie die Varianz und verbessern die Vorhersageleistung.</p>
+</li>
+<li>
+<p><strong>Bessere Generalisierung:</strong>
+   Durch die Verwendung verschiedener Teilmengen der Daten und Features bei jedem Baum verbessern Random Forests die Generalisierungsfähigkeit des Modells. Dies ist besonders wichtig, wenn der Trainingsdatensatz begrenzt ist.</p>
+</li>
+<li>
+<p><strong>Automatische Feature-Selektion:</strong>
+   Random Forests führen eine automatische Feature-Selektion durch, indem sie die Wichtigkeit der Features bewerten. Dies kann dazu beitragen, irrelevante oder redundante Features zu eliminieren.</p>
+</li>
+<li>
+<p><strong>Out-of-Bag (OOB) Schätzung:</strong>
+   Random Forests ermöglichen die Verwendung von Out-of-Bag-Schätzungen, bei denen jedes Beispiel durchschnittlich etwa in einem Drittel der Bäume ausgelassen wird. Dies bietet eine interne Schätzung der Modellgenauigkeit.</p>
+</li>
+</ol>
+<p><strong>Nachteile von Random Forests gegenüber Entscheidungsbäumen:</strong></p>
+<ol>
+<li>
+<p><strong>Komplexität und Rechenressourcen:</strong>
+   Random Forests sind aufgrund der Notwendigkeit, mehrere Bäume zu trainieren und zu kombinieren, rechenintensiver und komplexer als einzelne Entscheidungsbäume. Dies kann zu längeren Trainingszeiten führen.</p>
+</li>
+<li>
+<p><strong>Schwer interpretierbar:</strong>
+   Die Kombination mehrerer Bäume macht Random Forests schwerer interpretierbar im Vergleich zu einzelnen Entscheidungsbäumen. Es ist schwieriger, den genauen Einfluss jedes Features auf die Vorhersagen zu verstehen.</p>
+</li>
+<li>
+<p><strong>Overhead durch Randomisierung:</strong>
+   In einigen Fällen kann die Randomisierung zu einem gewissen Overhead führen, insbesondere wenn der Datensatz klein ist oder die Features nicht stark differenzierend sind. In solchen Fällen kann ein einfacher Entscheidungsbaum möglicherweise effizienter sein.</p>
+</li>
+<li>
+<p><strong>Unnötig für klare Zusammenhänge:</strong>
+   Wenn die zugrundeliegenden Zusammenhänge im Datensatz bereits einfach und klar sind, kann die Komplexität von Random Forests unnötig sein. In solchen Fällen könnte ein einfacher Entscheidungsbaum ausreichen.</p>
+</li>
+</ol>
+<h2 id="referenzen-und-nachschlagewerke">Referenzen und Nachschlagewerke</h2>
+<ul>
+<li><a href="https://www.listendata.com/2014/11/random-forest-with-r.html">Listandata.com</a></li>
+<li><a href="https://www.ibm.com/topics/random-forest">IMB</a></li>
+<li><a href="https://www.youtube.com/watch?v=cIbj0WuK41w">Youtube: Visual Guide to Random Forests</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
