@@ -2680,8 +2680,8 @@
 <h3 id="21-erstellen-sie-ein-interaktives-dashboard-zur-visualisierung-der-taglichen-einsatzzahlen">2.1 Erstellen Sie ein interaktives Dashboard zur Visualisierung der täglichen Einsatzzahlen</h3>
 <ol>
 <li>Filtern Sie nach Datum und Einsatzarten (z. B. <code>mission_count_fire</code>, <code>mission_count_ems</code>), um die Daten nach verschiedenen Kriterien anzuzeigen.</li>
-<li>Visualisieren Sie die Anzahl der Einsätze pro Tag mit einem Balkendiagramm.</li>
-<li>Zeigen Sie die Reaktionszeiten für verschiedene Einsatzarten (z. B. <code>response_time_fire_time_to_first_pump_mean</code>) in einem Liniendiagramm an.</li>
+<li>Visualisieren Sie die Anzahl der Einsätze pro Tag/ Woche/ Monat.</li>
+<li>Zeigen Sie die durchschnittlichen Reaktionszeiten für alle Einsatzarten (z. B. <code>response_time_fire_time_to_first_pump_mean</code>) in einem Liniendiagramm an.</li>
 <li>Erstellen Sie interaktive Widgets, mit denen die Benutzer den Zeitraum und die Einsatzarten nach Bedarf anpassen können.</li>
 </ol>
 <h3 id="22-erstellen-sie-ein-modell-zur-vorhersage-der-reaktionszeit-fur-brandeinsatze">2.2 Erstellen Sie ein Modell zur Vorhersage der Reaktionszeit für Brandeinsätze</h3>
@@ -2693,7 +2693,7 @@
 <h3 id="23-kategorisieren-sie-einsatze-als-kritisch-oder-nicht-kritisch">2.3 Kategorisieren Sie Einsätze als "kritisch" oder "nicht-kritisch"</h3>
 <ol>
 <li>Trainieren Sie ein Klassifikationsmodell (z. B. logistische Regression oder Random Forest), das auf <code>mission_count_ems_critical</code> und <code>response_time_ems_critical_mean</code> basiert.</li>
-<li>Evaluieren Sie das Modell mit den Metriken Präzision, Recall und F1-Score, um die Leistung der Klassifikation zu bewerten.</li>
+<li>Evaluieren Sie das Modell (mit den Metriken Präzision, Recall und F1-Score), um die Leistung der Klassifikation zu bewerten.</li>
 </ol>
 <h3 id="24-erstellen-sie-ein-tool-zur-analyse-der-reaktionszeiten-fur-kritische-und-nicht-kritische-einsatze">2.4 Erstellen Sie ein Tool zur Analyse der Reaktionszeiten für kritische und nicht-kritische Einsätze</h3>
 <ol>
@@ -2711,7 +2711,7 @@
 <li>Wie haben sich die Gesamtzahlen der Einsätze über die Zeit verändert?</li>
 <li>Lassen sich saisonale Schwankungen oder langfristige Trends in den Einsatzzahlen erkennen?</li>
 </ol>
-<h3 id="27-erstellen-sie-ein-boxplot-zur-darstellung-der-reaktionszeiten-response_time_ems_critical_mean-fur-verschiedene-einsatzarten">2.7 Erstellen Sie ein Boxplot zur Darstellung der Reaktionszeiten (<code>response_time_ems_critical_mean</code>) für verschiedene Einsatzarten</h3>
+<h3 id="27-erstellen-sie-ein-boxplot-zur-darstellung-der-reaktionszeiten-response_time-fur-verschiedene-einsatzarten">2.7 Erstellen Sie ein Boxplot zur Darstellung der Reaktionszeiten (<code>response_time...</code>) für verschiedene Einsatzarten</h3>
 <ol>
 <li>Gibt es signifikante Unterschiede in den Reaktionszeiten für die verschiedenen Einsatzarten (EMS, Brände, technische Rettung)?</li>
 <li>Welche Einsatzarten zeigen die längsten oder kürzesten Reaktionszeiten?</li>
@@ -2726,7 +2726,7 @@
 <li>Welche Einsatzart weist die längste durchschnittliche Reaktionszeit auf?</li>
 <li>Welche Trends oder Veränderungen in den Reaktionszeiten sind im Zeitverlauf zu beobachten?</li>
 </ol>
-<h3 id="210-erstellen-sie-ein-histogramm-zur-darstellung-der-haufigkeit-der-kritischen-einsatze-mission_count_ems_critical">2.10 Erstellen Sie ein Histogramm zur Darstellung der Häufigkeit der kritischen Einsätze (<code>mission_count_ems_critical</code>)</h3>
+<h3 id="210-erstellen-sie-ein-histogramm-zur-darstellung-der-haufigkeit-der-kritischen-einsatze-mission_count__critical">2.10 Erstellen Sie ein Histogramm zur Darstellung der Häufigkeit der kritischen Einsätze (<code>mission_count_..._critical</code>)</h3>
 <ol>
 <li>Wie häufig treten kritische Einsätze auf, und wie hoch ist deren Anteil an den Gesamteinsätzen?</li>
 <li>Gibt es spezifische Zeiträume oder Tage, an denen besonders viele oder wenige kritische Einsätze auftraten?</li>
