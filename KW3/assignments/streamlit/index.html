@@ -2690,10 +2690,11 @@
 <li>Bauen Sie ein lineares Regressionsmodell, das die durchschnittliche Reaktionszeit für Brandeinsätze (<code>response_time_fire_time_to_first_pump_mean</code>) vorhersagt.</li>
 <li>Bewerten Sie das Modell anhand der mittleren quadratischen Abweichung (MSE), um die Genauigkeit Ihrer Vorhersagen zu prüfen.</li>
 </ol>
-<h3 id="23-kategorisieren-sie-einsatze-als-kritisch-oder-nicht-kritisch">2.3 Kategorisieren Sie Einsätze als "kritisch" oder "nicht-kritisch"</h3>
+<h3 id="zusatz-23-kategorisieren-sie-einsatze">Zusatz: 2.3 Kategorisieren Sie Einsätze</h3>
 <ol>
-<li>Trainieren Sie ein Klassifikationsmodell (z. B. SVM oder Entscheidungsbaum), das auf <code>mission_count_ems_critical</code> und <code>response_time_ems_critical_mean</code> basiert. Gibt es einen zusammenhang?</li>
+<li>Trainieren Sie ein Klassifikationsmodell (z. B. SVM oder Entscheidungsbaum), das auf den Datensatz <a href="https://github.com/Berliner-Feuerwehr/BF-Open-Data/blob/main/Datasets/Mission_Data/mission_data_set_open_data_2024.csv">https://github.com/Berliner-Feuerwehr/BF-Open-Data/blob/main/Datasets/Mission_Data/mission_data_set_open_data_2024.csv</a> zurückgreift. Das Modell soll die Klasse <code>dispatchcode_criticality</code> vorhersagen</li>
 <li>Evaluieren Sie das Modell (mit den Metriken Präzision, Recall und F1-Score), um die Leistung der Klassifikation zu bewerten.</li>
+<li>Erstellen Sie ein Regressionsmodell, um die <code>response_time</code>in diesem Datensatz vorherzusagen.</li>
 </ol>
 <h3 id="24-erstellen-sie-ein-tool-zur-analyse-der-reaktionszeiten-fur-kritische-und-nicht-kritische-einsatze">2.4 Erstellen Sie ein Tool zur Analyse der Reaktionszeiten für kritische und nicht-kritische Einsätze</h3>
 <ol>
