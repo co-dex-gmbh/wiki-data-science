@@ -2692,12 +2692,11 @@
 </ol>
 <h3 id="23-kategorisieren-sie-einsatze-als-kritisch-oder-nicht-kritisch">2.3 Kategorisieren Sie Einsätze als "kritisch" oder "nicht-kritisch"</h3>
 <ol>
-<li>Trainieren Sie ein Klassifikationsmodell (z. B. logistische Regression oder Random Forest), das auf <code>mission_count_ems_critical</code> und <code>response_time_ems_critical_mean</code> basiert.</li>
+<li>Trainieren Sie ein Klassifikationsmodell (z. B. SVM oder Entscheidungsbaum), das auf <code>mission_count_ems_critical</code> und <code>response_time_ems_critical_mean</code> basiert. Gibt es einen zusammenhang?</li>
 <li>Evaluieren Sie das Modell (mit den Metriken Präzision, Recall und F1-Score), um die Leistung der Klassifikation zu bewerten.</li>
 </ol>
 <h3 id="24-erstellen-sie-ein-tool-zur-analyse-der-reaktionszeiten-fur-kritische-und-nicht-kritische-einsatze">2.4 Erstellen Sie ein Tool zur Analyse der Reaktionszeiten für kritische und nicht-kritische Einsätze</h3>
 <ol>
-<li>Erstellen Sie ein Tool mit Streamlit, das es ermöglicht, die Daten nach Datum zu filtern.</li>
 <li>Visualisieren Sie die durchschnittliche Reaktionszeit für kritische EMS-Einsätze (<code>response_time_ems_critical_mean</code>) und für Brandeinsätze (<code>response_time_fire_time_to_first_pump_mean</code>).</li>
 <li>Implementieren Sie interaktive Widgets, mit denen die Benutzer verschiedene Zeiträume auswählen und die Reaktionszeiten vergleichen können.</li>
 </ol>
