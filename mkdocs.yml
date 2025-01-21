@@ -29,62 +29,84 @@ nav:
       - Datensätze verstehen: data_analysis/understand_datasets.md
       - EDA Schritte: data_analysis/eda_steps.md
       - Aufgaben: data_analysis/tasks.md
-  - Woche 1 und 2:
-      - Überblick: week1/overview.md
+  - KW 49 und 50:
+      - Überblick: KW49-50/overview.md
       - Data Cleaning: 
-        - Einführung: week1/data_processing/intro.md
-        - Missing Values: week1/data_processing/missing_values.md
-        - Outliers: week1/data_processing/outliers.md
-        - Duplikate: week1/data_processing/duplicates.md
-        - Konvertierung: week1/data_processing/type_conversion.md
-      - Ziele: week1/goals.md
-  - Woche 3:
+        - Einführung: KW49-50/data_processing/intro.md
+        - Missing Values: KW49-50/data_processing/missing_values.md
+        - Outliers: KW49-50/data_processing/outliers.md
+        - Duplikate: KW49-50/data_processing/duplicates.md
+        - Konvertierung: KW49-50/data_processing/type_conversion.md
+      - Ziele: KW49-50/goals.md
+  - KW 51:
       - Feature Engineering:
-        - Encoding: week3/feature_engineering/encoding.md
-        - Scaling: week3/feature_engineering/scaling.md
-        - Transformation: week3/feature_engineering/transformation.md
-        - Feature Extraction: week3/feature_engineering/feature_extraction.md
-        - Erstellung neuer Features: week3/feature_engineering/new_features.md
+        - Encoding: KW51/feature_engineering/encoding.md
+        - Scaling: KW51/feature_engineering/scaling.md
+        - Transformation: KW51/feature_engineering/transformation.md
+        - Feature Extraction: KW51/feature_engineering/feature_extraction.md
+        - Erstellung neuer Features: KW51/feature_engineering/new_features.md
       # - Exkurs Klassifikation:
-      #   - Einführung: week3/excourse_classification/intro.md
-      #   - Modelle trainieren: week3/excourse_classification/train_models.md
-      #   - Naive Bayes: week3/excourse_classification/naive_bayes.md
-      - Ziele: week3/goals.md
-  - Woche 4 & 5:
+      #   - Einführung: KW51/excourse_classification/intro.md
+      #   - Modelle trainieren: KW51/excourse_classification/train_models.md
+      #   - Naive Bayes: KW51/excourse_classification/naive_bayes.md
+      - Ziele: KW51/goals.md
+  - KW 2:
       - Einführung statistisches und maschinelles Lernen: 
-        - Modelle trainieren: week4/statistical_and_machine_learning/train_models.md
-        - Generalisierung: week4/statistical_and_machine_learning/generalization.md
-        - Test-Train Split: week4/statistical_and_machine_learning/test_train_split.md
-        - Distanzmetriken: week4/statistical_and_machine_learning/distance_metrics/distance_metrics.md
-        - Evaluation: week4/statistical_and_machine_learning/evaluation.md
+        - Modelle trainieren: KW2/statistical_and_machine_learning/train_models.md
+        - Generalisierung: KW2/statistical_and_machine_learning/generalization.md
+        - Test-Train Split: KW2/statistical_and_machine_learning/test_train_split.md
+        - Exkurs Distanzmetriken: KW2/statistical_and_machine_learning/distance_metrics/distance_metrics.md
+        - Exkurs Evaluation: KW2/statistical_and_machine_learning/evaluation.md
       - Entscheidungsbäume:
-        - Einführung: week4/decision_trees/intro.md
-        - Split Kriterium: week4/decision_trees/split-criteria.md
-        - Exkurs Random Forest: week4/decision_trees/random_forest.md
-      - Naive Bayes:
-        - Einführung: week4/naive_bayes/intro.md
-        - Naive Bayes: week4/naive_bayes/naive_bayes.md
-      - K-Means: week4/kmeans/k-means.md
-      - Lineare Regression: week4/linear_regression/linear_regression.md
+        - Einführung: KW2/decision_trees/intro.md
+        - Split Kriterium: KW2/decision_trees/split-criteria.md
+        - Exkurs Random Forest: KW2/decision_trees/random_forest.md
+      - SVM:
+        - SVM: KW2/svm/svm.md
+      - Exkurs Naive Bayes:
+        - Einführung: KW2/naive_bayes/intro.md
+        - Naive Bayes: KW2/naive_bayes/naive_bayes.md
+      - Exkurs K-Means: KW2/kmeans/k-means.md
+      - Lineare Regression: KW2/linear_regression/linear_regression.md
       - Ziele: 
-        - Einführung statistisches & maschinelles Lernen: week4/goals.md
+        - Einführung statistisches & maschinelles Lernen: KW2/goals.md
         - Dashboards: week5/goals.md
       - Aufgaben:
-        - Car Features: week4/assignments/car_features.md
+        - Car Features: KW2/assignments/car_features.md
+  - KW 3:
+      - Einführung Dashboards: KW3/intro.md
+      - Streamlit:
+        - Einführung: KW3/streamlit/intro.md
+        - Struktur: KW3/streamlit/structure.md
+        - Visualisierungen: KW3/streamlit/visualization.md
+        - Layout: KW3/streamlit/layout.md
+        - Umgang mit Daten: KW3/streamlit/data-handling.md
+        - Interaktivität: KW3/streamlit/interactivity.md
+        - Caching: KW3/streamlit/caching.md
+        - Multipage Apps: KW3/streamlit/multipage-apps.md
+        - Secrets und Authentication: KW3/streamlit/secrets-authentication.md
+        - Ausblick: KW3/streamlit/outlook.md
+      - Aufgaben:
+        - Streamlit: KW3/assignments/streamlit.md
+        - Dash: KW3/assignments/dash.md
   # - Woche 5:
   #     - Ziele: week5/goals.md
-  - Woche 6:
-      - Ziele: week6/goals.md
-  - Woche 7:
+  - KW 4:
+      - Ziele: KW4/goals.md
+      - Skalierung: KW4/scaling.md
+      - Smote: KW4/smote.md
+      - KNN: KW4/knn.md
+      - PCA: KW4/pca.md
+  - KW 5:
       - Ziele: week7/goals.md
-  - Woche 8:
+  - KW 6:
       - Ziele: week8/goals.md
-  - Woche 9:
+  - KW 7:
       - Ziele: week9/goals.md
   - Woche 10:
-      - Ziele: week10/goals.md
+      - Ziele: KW49-500/goals.md
   - Woche 11:
-      - Ziele: week11/goals.md
+      - Ziele: KW49-501/goals.md
       
 
 # Weitere Einstellungen und Plugins können hier hinzugefügt werden.
