@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../scaling/">
+        <link rel="prev" href="../metrics/">
       
       
         <link rel="next" href="../knn/">
@@ -2071,6 +2071,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metriken
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -2986,27 +3007,27 @@ print(classification_report(y_true, y_pred))
 <p>SMOTE basiert auf dem Konzept der Interpolation im Feature-Raum. Für jeden Punkt x₁ der Minderheitsklasse wird ein synthetischer Punkt x_new wie folgt erzeugt:</p>
 <p>x_new = x₁ + λ(x₂ - x₁)</p>
 <p>wobei:
-- x₁ ist der Ausgangspunkt in der Minderheitsklasse
-- x₂ ist einer der k nächsten Nachbarn von x₁
-- λ ist ein zufälliger Wert zwischen 0 und 1</p>
+ - x₁ ist der Ausgangspunkt in der Minderheitsklasse
+ - x₂ ist einer der k nächsten Nachbarn von x₁
+ - λ ist ein zufälliger Wert zwischen 0 und 1</p>
 <h3 id="32-k-nearest-neighbors-im-smote-kontext">3.2 K-Nearest Neighbors im SMOTE-Kontext</h3>
 <p>Die Auswahl der k nächsten Nachbarn erfolgt typischerweise im euklidischen Raum:</p>
 <p>d(x₁, x₂) = √(Σ(x₁ᵢ - x₂ᵢ)²)</p>
 <p>Die Wahl von k beeinflusst dabei:
-- Die Varianz der synthetischen Beispiele
-- Die Dichte der generierten Punkte
-- Die Gefahr von Overfitting oder Underfitting</p>
+ - Die Varianz der synthetischen Beispiele
+ - Die Dichte der generierten Punkte
+ - Die Gefahr von Overfitting oder Underfitting</p>
 <h2 id="4-theoretische-eigenschaften-und-garantien">4. Theoretische Eigenschaften und Garantien</h2>
 <h3 id="41-topologische-eigenschaften">4.1 Topologische Eigenschaften</h3>
 <p>SMOTE erhält wichtige topologische Eigenschaften des ursprünglichen Datenraums:
-- Die konvexe Hülle der Minderheitsklasse bleibt erhalten
-- Die Dichte-Verteilung wird lokal approximiert
-- Cluster-Strukturen bleiben weitgehend erhalten</p>
+ - Die konvexe Hülle der Minderheitsklasse bleibt erhalten
+ - Die Dichte-Verteilung wird lokal approximiert
+ - Cluster-Strukturen bleiben weitgehend erhalten</p>
 <h3 id="42-statistische-eigenschaften">4.2 Statistische Eigenschaften</h3>
 <p>Die generierten Datenpunkte haben folgende statistische Eigenschaften:
-- Der Erwartungswert liegt auf der Verbindungslinie zwischen zwei realen Punkten
-- Die Varianz wird durch die lokale Nachbarschaft bestimmt
-- Die Kovarianzstruktur der originalen Daten bleibt approximativ erhalten</p>
+ - Der Erwartungswert liegt auf der Verbindungslinie zwischen zwei realen Punkten
+ - Die Varianz wird durch die lokale Nachbarschaft bestimmt
+ - Die Kovarianzstruktur der originalen Daten bleibt approximativ erhalten</p>
 <h2 id="5-theoretische-limitationen">5. Theoretische Limitationen</h2>
 <h3 id="51-grundlegende-einschrankungen">5.1 Grundlegende Einschränkungen</h3>
 <ul>
