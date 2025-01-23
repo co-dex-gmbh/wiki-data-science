@@ -2960,7 +2960,7 @@ covariance_matrix = np.dot(X_standardized.T, X_standardized) / (n_samples - 1)
 # Sortieren nach Größe der Eigenwerte
 idx = eigenvalues.argsort()[::-1]
 eigenvalues = eigenvalues[idx]
-eigenvectors = eigenvectors[:, idx]
+eigenvectors = eigenvectors[idx, :]
 </code></pre>
 <h2 id="die-bedeutung-fur-die-datenanalyse">Die Bedeutung für die Datenanalyse</h2>
 <p>Die PCA ist aus mehreren Gründen so wertvoll:</p>
