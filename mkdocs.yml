@@ -94,9 +94,14 @@ nav:
   - KW 4:
       - Ziele: KW4/goals.md
       - Skalierung: KW4/scaling.md
+      - Metriken: KW4/metrics.md
       - Smote: KW4/smote.md
       - KNN: KW4/knn.md
       - PCA: KW4/pca.md
+      - Cheat-Sheet: KW4/pca_smote_cheat_sheet.md
+      - Aufgaben: 
+        - Analytics Dashboard: KW4/assignments/analytics-dashbaord.md
+        - Car Features - SMOTE und PCA: KW4/assignments/car-features.md
   - KW 5:
       - Ziele: week7/goals.md
   - KW 6:

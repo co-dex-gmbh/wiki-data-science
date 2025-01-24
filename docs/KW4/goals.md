@@ -8,3 +8,7 @@ Ich kann...
 ... den Unterschied zwischen Dash und flask erklären.<br>
 ... Dashboards mit mehreren Unterseiten erstellen.<br>
 ... mein Dashboard in einer Cloud bereitstellen.<br>
+... Over- und Undersampling-Methoden erklären.<br>
+... SMOTE erklären.<br>
+... die Idee hinter PCA erklären.<br>
+... eine PCA in Python anwenden.<br>

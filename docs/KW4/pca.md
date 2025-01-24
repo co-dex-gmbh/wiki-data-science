@@ -45,7 +45,7 @@ eigenvalues, eigenvectors = np.linalg.eigh(covariance_matrix)
 # Sortieren nach Größe der Eigenwerte
 idx = eigenvalues.argsort()[::-1]
 eigenvalues = eigenvalues[idx]
-eigenvectors = eigenvectors[:, idx]
+eigenvectors = eigenvectors[idx, :]
 ```
 
 ## Die Bedeutung für die Datenanalyse

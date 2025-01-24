@@ -88,9 +88,9 @@ SMOTE basiert auf dem Konzept der Interpolation im Feature-Raum. Für jeden Punk
 x_new = x₁ + λ(x₂ - x₁)
 
 wobei:
-- x₁ ist der Ausgangspunkt in der Minderheitsklasse
-- x₂ ist einer der k nächsten Nachbarn von x₁
-- λ ist ein zufälliger Wert zwischen 0 und 1
+   - x₁ ist der Ausgangspunkt in der Minderheitsklasse
+   - x₂ ist einer der k nächsten Nachbarn von x₁
+   - λ ist ein zufälliger Wert zwischen 0 und 1
 
 ### 3.2 K-Nearest Neighbors im SMOTE-Kontext
 Die Auswahl der k nächsten Nachbarn erfolgt typischerweise im euklidischen Raum:
@@ -98,34 +98,36 @@ Die Auswahl der k nächsten Nachbarn erfolgt typischerweise im euklidischen Raum
 d(x₁, x₂) = √(Σ(x₁ᵢ - x₂ᵢ)²)
 
 Die Wahl von k beeinflusst dabei:
-- Die Varianz der synthetischen Beispiele
-- Die Dichte der generierten Punkte
-- Die Gefahr von Overfitting oder Underfitting
+   - Die Varianz der synthetischen Beispiele
+   - Die Dichte der generierten Punkte
+   - Die Gefahr von Overfitting oder Underfitting
 
 ## 4. Theoretische Eigenschaften und Garantien
 
 ### 4.1 Topologische Eigenschaften
 SMOTE erhält wichtige topologische Eigenschaften des ursprünglichen Datenraums:
-- Die konvexe Hülle der Minderheitsklasse bleibt erhalten
-- Die Dichte-Verteilung wird lokal approximiert
-- Cluster-Strukturen bleiben weitgehend erhalten
+
+   - Die konvexe Hülle der Minderheitsklasse bleibt erhalten
+   - Die Dichte-Verteilung wird lokal approximiert
+   - Cluster-Strukturen bleiben weitgehend erhalten
 
 ### 4.2 Statistische Eigenschaften
 Die generierten Datenpunkte haben folgende statistische Eigenschaften:
-- Der Erwartungswert liegt auf der Verbindungslinie zwischen zwei realen Punkten
-- Die Varianz wird durch die lokale Nachbarschaft bestimmt
-- Die Kovarianzstruktur der originalen Daten bleibt approximativ erhalten
+
+   - Der Erwartungswert liegt auf der Verbindungslinie zwischen zwei realen Punkten
+   - Die Varianz wird durch die lokale Nachbarschaft bestimmt
+   - Die Kovarianzstruktur der originalen Daten bleibt approximativ erhalten
 
 ## 5. Theoretische Limitationen
 
 ### 5.1 Grundlegende Einschränkungen
-- Die Methode ist anfällig für Rauschen in den Originaldaten
-- Bei hochdimensionalen Daten kann der Fluch der Dimensionalität problematisch werden
+ - Die Methode ist anfällig für Rauschen in den Originaldaten
+ - Bei hochdimensionalen Daten kann der Fluch der Dimensionalität problematisch werden
 
 ### 5.2 Statistische Limitationen
-- Die wahre Verteilung der Minderheitsklasse wird nur approximiert
-- Extreme Werte (Outlier) können zu verzerrten synthetischen Beispielen führen
-- Die Unabhängigkeitsannahme zwischen den Features wird implizit vorausgesetzt
+ - Die wahre Verteilung der Minderheitsklasse wird nur approximiert
+ - Extreme Werte (Outlier) können zu verzerrten synthetischen Beispielen führen
+ - Die Unabhängigkeitsannahme zwischen den Features wird implizit vorausgesetzt
 <!-- 
 ## 5. Erweiterungen des Basis-SMOTE-Algorithmus
 
