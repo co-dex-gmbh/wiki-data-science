@@ -9,25 +9,25 @@
       
       
       
-        <link rel="prev" href="../../data_analysis/tasks/">
+        <link rel="prev" href="../analytics-dashbaord/">
       
       
-        <link rel="next" href="../data_processing/intro/">
+        <link rel="next" href="../../../week7/goals/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
-        <title>Überblick - Data Science</title>
+        <title>Car Features - SMOTE und PCA - Data Science</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#grundlagen-von-data-science" class="md-skip">
+        <a href="#car-features-and-msrp-2" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +88,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Data Science" class="md-header__button md-logo" aria-label="Data Science" data-md-component="logo">
+    <a href="../../.." title="Data Science" class="md-header__button md-logo" aria-label="Data Science" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Überblick
+              Car Features - SMOTE und PCA
             
           </span>
         </div>
@@ -183,7 +183,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Data Science" class="md-nav__button md-logo" aria-label="Data Science" data-md-component="logo">
+    <a href="../../.." title="Data Science" class="md-nav__button md-logo" aria-label="Data Science" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -201,7 +201,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -256,7 +256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fastapi/intro/" class="md-nav__link">
+      <a href="../../../fastapi/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -277,7 +277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fastapi/first_steps/" class="md-nav__link">
+      <a href="../../../fastapi/first_steps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -298,7 +298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fastapi/data_models/" class="md-nav__link">
+      <a href="../../../fastapi/data_models/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -319,7 +319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fastapi/sqlmodel/" class="md-nav__link">
+      <a href="../../../fastapi/sqlmodel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -340,7 +340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fastapi/task/" class="md-nav__link">
+      <a href="../../../fastapi/task/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -403,7 +403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data_analysis/intro/" class="md-nav__link">
+      <a href="../../../data_analysis/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -424,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data_analysis/data_visualization/" class="md-nav__link">
+      <a href="../../../data_analysis/data_visualization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -445,7 +445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data_analysis/understand_datasets/" class="md-nav__link">
+      <a href="../../../data_analysis/understand_datasets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -466,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data_analysis/eda_steps/" class="md-nav__link">
+      <a href="../../../data_analysis/eda_steps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -487,7 +487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data_analysis/tasks/" class="md-nav__link">
+      <a href="../../../data_analysis/tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -512,19 +512,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -538,7 +536,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             KW 49 und 50
@@ -549,30 +547,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Überblick
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../KW49-50/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -581,224 +559,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#was-ist-data-science" class="md-nav__link">
-    <span class="md-ellipsis">
-      Was ist Data Science?
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Was ist Data Science?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-problemdefinition" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Problemdefinition
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-datenbeschaffung" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Datenbeschaffung
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-datenaufbereitung" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Datenaufbereitung
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-modellierung" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Modellierung
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-validierung" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Validierung
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      (6. Deployment)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mathematische-optimierung-in-data-science" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mathematische Optimierung in Data Science
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Mathematische Optimierung in Data Science">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-definition" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Definition
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-gradient-descent" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Gradient Descent
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-regularisierung" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Regularisierung
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-optimierungsprobleme-im-kontext-von-data-science" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Optimierungsprobleme im Kontext von Data Science
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#wichtige-rollen-in-data-science" class="md-nav__link">
-    <span class="md-ellipsis">
-      Wichtige Rollen in Data Science
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Wichtige Rollen in Data Science">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#data-scientist" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Scientist
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-engineer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Engineer
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-analyst" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Analyst
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#machine-learning-engineer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Machine Learning Engineer
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#business-analyst" class="md-nav__link">
-    <span class="md-ellipsis">
-      Business Analyst
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-architect" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Architect
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#begriffe-aus-dem-data-science-kosmos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Begriffe aus dem Data Science Kosmos
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -846,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data_processing/intro/" class="md-nav__link">
+      <a href="../../../KW49-50/data_processing/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -867,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data_processing/missing_values/" class="md-nav__link">
+      <a href="../../../KW49-50/data_processing/missing_values/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -888,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data_processing/outliers/" class="md-nav__link">
+      <a href="../../../KW49-50/data_processing/outliers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -909,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data_processing/duplicates/" class="md-nav__link">
+      <a href="../../../KW49-50/data_processing/duplicates/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -930,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data_processing/type_conversion/" class="md-nav__link">
+      <a href="../../../KW49-50/data_processing/type_conversion/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -959,7 +719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../goals/" class="md-nav__link">
+      <a href="../../../KW49-50/goals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1057,7 +817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW51/feature_engineering/encoding/" class="md-nav__link">
+      <a href="../../../KW51/feature_engineering/encoding/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1078,7 +838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW51/feature_engineering/scaling/" class="md-nav__link">
+      <a href="../../../KW51/feature_engineering/scaling/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1099,7 +859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW51/feature_engineering/transformation/" class="md-nav__link">
+      <a href="../../../KW51/feature_engineering/transformation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1120,7 +880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW51/feature_engineering/feature_extraction/" class="md-nav__link">
+      <a href="../../../KW51/feature_engineering/feature_extraction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1141,7 +901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW51/feature_engineering/new_features/" class="md-nav__link">
+      <a href="../../../KW51/feature_engineering/new_features/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1170,7 +930,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW51/goals/" class="md-nav__link">
+      <a href="../../../KW51/goals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1268,7 +1028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW2/statistical_and_machine_learning/train_models/" class="md-nav__link">
+      <a href="../../../KW2/statistical_and_machine_learning/train_models/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1289,7 +1049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW2/statistical_and_machine_learning/generalization/" class="md-nav__link">
+      <a href="../../../KW2/statistical_and_machine_learning/generalization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1310,7 +1070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW2/statistical_and_machine_learning/test_train_split/" class="md-nav__link">
+      <a href="../../../KW2/statistical_and_machine_learning/test_train_split/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1331,7 +1091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW2/statistical_and_machine_learning/distance_metrics/distance_metrics/" class="md-nav__link">
+      <a href="../../../KW2/statistical_and_machine_learning/distance_metrics/distance_metrics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1352,7 +1112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW2/statistical_and_machine_learning/evaluation/" class="md-nav__link">
+      <a href="../../../KW2/statistical_and_machine_learning/evaluation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1416,7 +1176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW2/decision_trees/intro/" class="md-nav__link">
+      <a href="../../../KW2/decision_trees/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1437,7 +1197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW2/decision_trees/split-criteria/" class="md-nav__link">
+      <a href="../../../KW2/decision_trees/split-criteria/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1458,7 +1218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW2/decision_trees/random_forest/" class="md-nav__link">
+      <a href="../../../KW2/decision_trees/random_forest/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1522,7 +1282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW2/svm/svm/" class="md-nav__link">
+      <a href="../../../KW2/svm/svm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1586,7 +1346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW2/naive_bayes/intro/" class="md-nav__link">
+      <a href="../../../KW2/naive_bayes/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1607,7 +1367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW2/naive_bayes/naive_bayes/" class="md-nav__link">
+      <a href="../../../KW2/naive_bayes/naive_bayes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1636,7 +1396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW2/kmeans/k-means/" class="md-nav__link">
+      <a href="../../../KW2/kmeans/k-means/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1657,7 +1417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW2/linear_regression/linear_regression/" class="md-nav__link">
+      <a href="../../../KW2/linear_regression/linear_regression/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1713,7 +1473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW2/goals/" class="md-nav__link">
+      <a href="../../../KW2/goals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1734,7 +1494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week5/goals.md" class="md-nav__link">
+      <a href="../../../week5/goals.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1798,7 +1558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW2/assignments/car_features/" class="md-nav__link">
+      <a href="../../../KW2/assignments/car_features/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1869,7 +1629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW3/intro/" class="md-nav__link">
+      <a href="../../../KW3/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1925,7 +1685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW3/streamlit/intro/" class="md-nav__link">
+      <a href="../../../KW3/streamlit/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1946,7 +1706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW3/streamlit/structure/" class="md-nav__link">
+      <a href="../../../KW3/streamlit/structure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1967,7 +1727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW3/streamlit/visualization/" class="md-nav__link">
+      <a href="../../../KW3/streamlit/visualization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1988,7 +1748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW3/streamlit/layout/" class="md-nav__link">
+      <a href="../../../KW3/streamlit/layout/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2009,7 +1769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW3/streamlit/data-handling/" class="md-nav__link">
+      <a href="../../../KW3/streamlit/data-handling/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2030,7 +1790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW3/streamlit/interactivity/" class="md-nav__link">
+      <a href="../../../KW3/streamlit/interactivity/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2051,7 +1811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW3/streamlit/caching/" class="md-nav__link">
+      <a href="../../../KW3/streamlit/caching/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2072,7 +1832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW3/streamlit/multipage-apps/" class="md-nav__link">
+      <a href="../../../KW3/streamlit/multipage-apps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2093,7 +1853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW3/streamlit/secrets-authentication/" class="md-nav__link">
+      <a href="../../../KW3/streamlit/secrets-authentication/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2114,7 +1874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW3/streamlit/outlook/" class="md-nav__link">
+      <a href="../../../KW3/streamlit/outlook/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2178,7 +1938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW3/assignments/streamlit/" class="md-nav__link">
+      <a href="../../../KW3/assignments/streamlit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2199,7 +1959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW3/assignments/dash/" class="md-nav__link">
+      <a href="../../../KW3/assignments/dash/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2232,17 +1992,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
@@ -2256,7 +2018,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             KW 4
@@ -2270,7 +2032,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW4/goals/" class="md-nav__link">
+      <a href="../../goals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2291,7 +2053,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW4/scaling/" class="md-nav__link">
+      <a href="../../scaling/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2312,7 +2074,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW4/metrics/" class="md-nav__link">
+      <a href="../../metrics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2333,7 +2095,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW4/smote/" class="md-nav__link">
+      <a href="../../smote/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2354,7 +2116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW4/knn/" class="md-nav__link">
+      <a href="../../knn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2375,7 +2137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW4/pca/" class="md-nav__link">
+      <a href="../../pca/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2393,17 +2155,19 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_7" checked>
         
           
           <label class="md-nav__link" for="__nav_8_7" id="__nav_8_7_label" tabindex="0">
@@ -2417,7 +2181,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8_7">
             <span class="md-nav__icon md-icon"></span>
             Aufgaben
@@ -2431,7 +2195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW4/assignments/analytics-dashbaord/" class="md-nav__link">
+      <a href="../analytics-dashbaord/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2449,10 +2213,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../KW4/assignments/car-features/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Car Features - SMOTE und PCA
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2461,6 +2245,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aufgabe-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aufgabe 1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Aufgabe 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aufgabe-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aufgabe 1.1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aufgabe-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aufgabe 1.2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aufgabe-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aufgabe 1.3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aufgabe-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aufgabe 1.4
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aufgabe-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aufgabe 1.5
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2523,7 +2387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week7/goals/" class="md-nav__link">
+      <a href="../../../week7/goals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2586,7 +2450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week8/goals/" class="md-nav__link">
+      <a href="../../../week8/goals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2649,7 +2513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week9/goals/" class="md-nav__link">
+      <a href="../../../week9/goals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2712,7 +2576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW49-500/goals.md" class="md-nav__link">
+      <a href="../../../KW49-500/goals.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2775,7 +2639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../KW49-501/goals.md" class="md-nav__link">
+      <a href="../../../KW49-501/goals.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2823,64 +2687,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#was-ist-data-science" class="md-nav__link">
+  <a href="#aufgabe-1" class="md-nav__link">
     <span class="md-ellipsis">
-      Was ist Data Science?
+      Aufgabe 1
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Was ist Data Science?">
+    <nav class="md-nav" aria-label="Aufgabe 1">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-problemdefinition" class="md-nav__link">
+  <a href="#aufgabe-11" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Problemdefinition
+      Aufgabe 1.1
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-datenbeschaffung" class="md-nav__link">
+  <a href="#aufgabe-12" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Datenbeschaffung
+      Aufgabe 1.2
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-datenaufbereitung" class="md-nav__link">
+  <a href="#aufgabe-13" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Datenaufbereitung
+      Aufgabe 1.3
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-modellierung" class="md-nav__link">
+  <a href="#aufgabe-14" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Modellierung
+      Aufgabe 1.4
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-validierung" class="md-nav__link">
+  <a href="#aufgabe-15" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Validierung
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      (6. Deployment)
+      Aufgabe 1.5
     </span>
   </a>
   
@@ -2888,135 +2743,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mathematische-optimierung-in-data-science" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mathematische Optimierung in Data Science
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Mathematische Optimierung in Data Science">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-definition" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Definition
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-gradient-descent" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Gradient Descent
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-regularisierung" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Regularisierung
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-optimierungsprobleme-im-kontext-von-data-science" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Optimierungsprobleme im Kontext von Data Science
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#wichtige-rollen-in-data-science" class="md-nav__link">
-    <span class="md-ellipsis">
-      Wichtige Rollen in Data Science
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Wichtige Rollen in Data Science">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#data-scientist" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Scientist
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-engineer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Engineer
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-analyst" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Analyst
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#machine-learning-engineer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Machine Learning Engineer
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#business-analyst" class="md-nav__link">
-    <span class="md-ellipsis">
-      Business Analyst
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-architect" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Architect
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#begriffe-aus-dem-data-science-kosmos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Begriffe aus dem Data Science Kosmos
-    </span>
-  </a>
   
 </li>
       
@@ -3035,123 +2761,19 @@
                   
 
 
-<h1 id="grundlagen-von-data-science">Grundlagen von Data Science</h1>
-<p>Data Science ist ein interdisziplinäres Feld, das datengetriebene Erkenntnisse gewinnt, um Entscheidungsprozesse zu verbessern und neue Muster sowie Zusammenhänge aufzudecken. Dieses Kapitel bietet dir eine Einführung in die grundlegenden Konzepte und Prinzipien, die im Zentrum dieses spannenden Bereichs stehen.</p>
-<hr />
-<h2 id="was-ist-data-science">Was ist Data Science?</h2>
-<p>Data Science kombiniert verschiedene Disziplinen, darunter:</p>
-<ul>
-<li><strong>Statistik</strong>: Die Wissenschaft der Datenanalyse und des Schlussfolgerns.</li>
-<li><strong>Informatik</strong>: Methoden zur Verarbeitung, Analyse und Visualisierung großer Datenmengen.</li>
-<li><strong>Domänenwissen</strong>: Spezifisches Wissen über den Anwendungsbereich der Datenanalyse.</li>
-</ul>
-<p>Das Ziel von Data Science ist es, aus strukturierten und unstrukturierten Daten Wissen zu generieren.</p>
-<p>Wir haben in der Einführung zur Data Analysis bereits 4 Grundlegende Arten der Datenanalyse (Descriptive Analysis, Diagnostic Analysis, Predictive Analysis, Prescriptive Analysis) kennengelernt. Die einzelnen Schritte dieser Analysen sind ein wesentlicher Bestandteil der Data Science. Darüber hinaus gibt es weitere wichtige Konzepte und Methoden, die in der Datenwissenschaft eine Rolle spielen. In einem Kompletten Data Science Prozess werden unter anderem die folgenden Schritte durchlaufen:</p>
-<h3 id="1-problemdefinition"><strong>1. Problemdefinition</strong></h3>
-<ul>
-<li><strong>Ziel</strong>: Verstehen, welches Problem gelöst werden soll.</li>
-<li><strong>Fragen</strong>: Welche Entscheidungen sollen unterstützt werden? Welche Daten sind verfügbar?</li>
-</ul>
-<h3 id="2-datenbeschaffung"><strong>2. Datenbeschaffung</strong></h3>
-<ul>
-<li><strong>Quellen</strong>: Daten können aus internen Systemen, externen APIs, Sensoren oder Web-Scraping stammen.</li>
-<li><strong>Wichtig</strong>: Qualität und Verfügbarkeit der Daten beurteilen.</li>
-</ul>
-<h3 id="3-datenaufbereitung"><strong>3. Datenaufbereitung</strong></h3>
-<ul>
-<li><strong>Data Cleaning</strong>: Umgang mit fehlenden Werten, Duplikaten oder Ausreißern.</li>
-<li><strong>Feature Engineering</strong>: Erstellung relevanter Variablen, die Modelle verbessern.</li>
-<li><strong>Preprocessing</strong>: Skalieren, Normalisieren und Kodieren von Daten.</li>
-<li><strong>ETL-Prozesse</strong>: (Extract, Transform, Load) Umwandlung und Integration von Daten aus verschiedenen Quellen.</li>
-</ul>
-<h3 id="4-modellierung"><strong>4. Modellierung</strong></h3>
-<ul>
-<li><strong>Ziel</strong>: Aufbau von prädiktiven oder deskriptiven Modellen.</li>
-<li><strong>Methoden</strong>: Klassifikation, Regression, Clustering, etc.</li>
-</ul>
-<h3 id="5-validierung"><strong>5. Validierung</strong></h3>
-<ul>
-<li><strong>Metriken</strong>: Genauigkeit, F1-Score, RMSE.</li>
-<li><strong>Cross-Validation</strong>: Prüfung der Generalisierungsfähigkeit eines Modells.</li>
-</ul>
-<h3 id="6-deployment"><strong>(6. Deployment)</strong></h3>
-<ul>
-<li><strong>Anwendung</strong>: Bereitstellung von Modellen in produktiven Systemen.</li>
-<li><strong>Wartung</strong>: Monitoring der Modellleistung und Aktualisierung.</li>
-</ul>
-<hr />
-<h2 id="mathematische-optimierung-in-data-science">Mathematische Optimierung in Data Science</h2>
-<p>Data Science setzt sich zwar primär aus den Statistik, Informatik und Domänenwissen zusammen, aber es gibt auch viele andere Disziplinen, die in diesem Bereich eine Rolle spielen. Zu diesen gehört insbesondere die Mathematische Optimierung. Bei vielen statistischen Methoden und Machine-Learning-Modellen handelt es sich um Optimierungsprobleme, bei denen das Ziel darin besteht, die besten Parameter für ein Modell zu finden. Wir gehen im Nachfolgenden auf einige Begrifflichkeiten und Konzepte der Mathematischen Optimierung ein, welche uns als Data Scientisten regelmäßig begegnen werden.</p>
-<h3 id="1-definition"><strong>1. Definition</strong></h3>
-<ul>
-<li><strong>Ziel</strong>: Finden der besten Lösung für ein Problem unter gegebenen Einschränkungen.</li>
-<li><strong>Beispiele</strong>: Minimierung des Fehlers eines Modells, Maximierung der Genauigkeit oder Optimierung von Ressourcen.</li>
-</ul>
-<h3 id="2-gradient-descent"><strong>2. Gradient Descent</strong></h3>
-<ul>
-<li><strong>Beschreibung</strong>: Iterativer Algorithmus, um die optimalen Parameter eines Modells zu finden.</li>
-<li><strong>Funktionsweise</strong>: Bewegung in Richtung des steilsten Gradienten der Fehlerfunktion, um das Minimum zu erreichen.</li>
-<li><strong>Einsatzgebiete</strong>: Training neuronaler Netzwerke, lineare Regression.</li>
-</ul>
-<h3 id="3-regularisierung"><strong>3. Regularisierung</strong></h3>
-<ul>
-<li><strong>Ziel</strong>: Verhindern von Overfitting durch Hinzufügen von Straftermen in die Optimierungsfunktion.</li>
-<li><strong>Beispiele</strong>: L1-Regularisierung (Lasso), L2-Regularisierung (Ridge).</li>
-</ul>
-<h3 id="4-optimierungsprobleme-im-kontext-von-data-science"><strong>4. Optimierungsprobleme im Kontext von Data Science</strong></h3>
-<ul>
-<li><strong>Lineare Programmierung</strong>: Optimierung einer linearen Zielfunktion unter linearen Nebenbedingungen.</li>
-<li><strong>Nichtlineare Optimierung</strong>: Behandlung komplexerer Probleme, bei denen Zielfunktion oder Nebenbedingungen nicht linear sind.</li>
-<li><strong>Kombinatorische Optimierung</strong>: Lösung diskreter Probleme, wie z. B. die Auswahl der besten Feature-Kombination.</li>
-</ul>
-<hr />
-<p>Vor einigen Jahren wurde unter dem Begriff "Data Science" nahezu alles zusammengefasst, was mit Daten zu tun hatte. Heute hat sich das Feld weiterentwickelt und spezialisiert, wobei verschiedene Rollen und Aufgabenbereiche entstanden sind. Im Folgenden werden einige wichtige Rollen in Data Science vorgestellt, die in Unternehmen und Organisationen eine zentrale Rolle spielen.</p>
-<h2 id="wichtige-rollen-in-data-science">Wichtige Rollen in Data Science</h2>
-<h3 id="data-scientist"><strong>Data Scientist</strong></h3>
-<ul>
-<li>Verantwortlich für die Analyse und Modellierung der Daten.</li>
-<li>Kombiniert Statistik, Programmierung und Domänenwissen.</li>
-</ul>
-<h3 id="data-engineer"><strong>Data Engineer</strong></h3>
-<ul>
-<li>Entwickelt und pflegt Datenpipelines und Infrastruktur.</li>
-<li>Sicherstellung, dass Daten effizient und skalierbar verarbeitet werden.</li>
-</ul>
-<h3 id="data-analyst"><strong>Data Analyst</strong></h3>
-<ul>
-<li>Fokus auf Datenvisualisierung und Berichterstattung.</li>
-<li>Ziel: Geschäftsrelevante Erkenntnisse kommunizieren.</li>
-</ul>
-<h3 id="machine-learning-engineer"><strong>Machine Learning Engineer</strong></h3>
-<ul>
-<li>Spezialisiert auf die Entwicklung und Implementierung von ML-Modellen.</li>
-<li>Arbeitet eng mit Data Scientists zusammen, um Modelle in Produktionsumgebungen zu überführen.</li>
-</ul>
-<h3 id="business-analyst"><strong>Business Analyst</strong></h3>
-<ul>
-<li>Übersetzt Geschäftsanforderungen in datenbasierte Lösungen.</li>
-<li>Fokussiert auf die Anwendung von Daten zur Optimierung von Geschäftsprozessen.</li>
-</ul>
-<h3 id="data-architect"><strong>Data Architect</strong></h3>
-<ul>
-<li>Entwirft und implementiert Datenbanken und -architekturen.</li>
-<li>Sicherstellung, dass Daten effizient gespeichert und abgerufen werden können.</li>
-</ul>
-<hr />
-<p>In der Umgangssprache werden datengbasierte Projekte und teilweise sogar Software Projekte einfach als KI Projekte bezeichnet. In der Realität ist KI jedoch nur ein Teilbereich der Data Science. In diesem Abschnitt werden die Unterschiede und Beziehungen zwischen KI, Maschinellem Lernen, Deep Learning und Statistik erläutert.</p>
-<h2 id="begriffe-aus-dem-data-science-kosmos">Begriffe aus dem Data Science Kosmos</h2>
-<p>In der Welt von Data Science gibt es viele Begriffe, die oft synonym oder missverständlich verwendet werden. Wir führen hier einige der wichtigsten Begriffe auf und erklären ihre Bedeutung und Beziehung zueinander. Die Berufsfelder aus dem obigen Abschnitt werden dabei nicht wiederholend aufgeführt.</p>
-<ul>
-<li><strong>Künstliche Intelligenz (KI)</strong>: Der Überbegriff für Technologien, die menschenähnliches Denken und Handeln nachahmen.</li>
-<li><strong>Maschinelles Lernen (ML)</strong>: Ein Teilbereich der KI, der sich auf Algorithmen konzentriert, die aus Daten lernen können.</li>
-<li><strong>Deep Learning</strong>: Ein Teilbereich des ML, der neuronale Netze mit vielen Schichten verwendet.</li>
-<li><strong>Statistik</strong>: Fundamentale Methoden zur Analyse und Interpretation von Daten.</li>
-<li><strong>Data Mining</strong>: Extraktion von Mustern und Informationen aus großen Datenmengen.</li>
-<li><strong>Big Data</strong>: Verarbeitung und Analyse großer Datenmengen, die mit traditionellen Methoden nicht möglich wären.</li>
-<li><strong>Business Intelligence (BI)</strong>: Technologien und Anwendungen zur Analyse von Geschäftsdaten.</li>
-</ul>
-<hr />
-<p>Wir werden uns in den nächsten Abschnitten mit der Datenverarbeitung beschäftigen. Genauer werden wir auf Feature Enigneering eingehen. Feature Engineering ist ein wichtiger Schritt im Data-Science-Prozess, bei dem neue, aussagekräftige Variablen aus vorhandenen Daten erstellt werden. Dieser Prozess ermöglicht es, relevante Informationen zu extrahieren und in einer Form bereitzustellen, die von Algorithmen optimal genutzt werden kann.</p>
+<h1 id="car-features-and-msrp-2">Car Features and MSRP - 2</h1>
+<h2 id="aufgabe-1">Aufgabe 1</h2>
+<p>In der KW 2 haben wir bereits ein Klassifikationsmodell für die Vorhersage der Marke eines Autos erstellt. </p>
+<h3 id="aufgabe-11">Aufgabe 1.1</h3>
+<p>Teste an dieser Analyse den Einsatz von SMOTE für das Balancieren des Datensatzes. </p>
+<h3 id="aufgabe-12">Aufgabe 1.2</h3>
+<p>Vergleiche die Ergebnisse mit dem unbalancierten Datensatz.</p>
+<h3 id="aufgabe-13">Aufgabe 1.3</h3>
+<p>Führe das Upsampling einmal vor und einmal nach dem Split durch. Was sind die Unterschiede? Was sind die Vor- / Nachteile der beiden Methoden?</p>
+<h3 id="aufgabe-14">Aufgabe 1.4</h3>
+<p>Verwende in der Vorverarbeitung der Daten eine PCA. Wie verändert sich die Genauigkeit des Modells?</p>
+<h3 id="aufgabe-15">Aufgabe 1.5</h3>
+<p>Vergleiche den Einsatz der PCA mit deine Spaltenauswahl auf basis der Korrelationen.</p>
 
 
 
@@ -3198,12 +2820,12 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
