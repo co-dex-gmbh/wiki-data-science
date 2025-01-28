@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../../KW4/assignments/car-features/">
+      
+      
+        <link rel="next" href="../goals/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -16,7 +20,7 @@
     
     
       
-        <title>Natural Language Processing (NLP) - Data Science</title>
+        <title>NLTK - Data Science</title>
       
     
     
@@ -104,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Natural Language Processing (NLP)
+              NLTK
             
           </span>
         </div>
@@ -2262,17 +2266,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
         
           
           <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
@@ -2286,7 +2292,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             KW 5
@@ -2297,10 +2303,251 @@
                 
   
   
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    NLTK
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    NLTK
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-grundidee" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Grundidee
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-einfache-beispielprobleme" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. einfache Beispielprobleme
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. einfache Beispielprobleme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-features-sind-in-langerer-textform-gegeben" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Features sind in längerer Textform gegeben
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-spamfilter" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Spamfilter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-idee-des-spamfilters" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Idee des Spamfilters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Idee des Spamfilters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-umwandeln-in-ein-doc-objekt" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Umwandeln in ein Doc-Objekt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-entfernen-der-satzzeichen" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Entfernen der Satzzeichen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-lemmatisierung" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Lemmatisierung
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-gro-und-kleinschreibung" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Groß- und Kleinschreibung
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-stoppwort-entfernung" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 Stoppwort-Entfernung
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-aufbereitung-der-daten" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Aufbereitung der Daten
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-countvectorizer-bow-methode" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. CountVectorizer (BoW-Methode)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-gewichten-der-einzelnen-worter" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Gewichten der einzelnen Wörter
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Gewichten der einzelnen Wörter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-term-frequency-tf" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Term-Frequency (TF)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-inverse-document-frequency-idf" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Inverse-Document-Frequency (IDF)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-tf-idf" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3 TF-IDF
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-tfidfvectorizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. TfidfVectorizer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
   
   
     <li class="md-nav__item">
-      <a href="../../week7/goals/" class="md-nav__link">
+      <a href="../goals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
