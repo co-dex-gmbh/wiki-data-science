@@ -103,7 +103,8 @@ nav:
         - Analytics Dashboard: KW4/assignments/analytics-dashbaord.md
         - Car Features - SMOTE und PCA: KW4/assignments/car-features.md
   - KW 5:
-      - Ziele: week7/goals.md
+      - NLTK: KW5/nltk.md
+      - Ziele: KW5/goals.md
   - KW 6:
       - Ziele: week8/goals.md
   - KW 7:
