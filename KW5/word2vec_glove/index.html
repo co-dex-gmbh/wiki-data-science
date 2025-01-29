@@ -9,25 +9,25 @@
       
       
       
-        <link rel="prev" href="../structure/">
+        <link rel="prev" href="../vectorization_embeddings/">
       
       
-        <link rel="next" href="../layout/">
+        <link rel="next" href="../goals/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
-        <title>Visualisierungen - Data Science</title>
+        <title>Word2Vec & GloVe - Data Science</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#word2vec-und-glove-eine-vollstandige-betrachtung" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -83,7 +88,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Data Science" class="md-header__button md-logo" aria-label="Data Science" data-md-component="logo">
+    <a href="../.." title="Data Science" class="md-header__button md-logo" aria-label="Data Science" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -103,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Visualisierungen
+              Word2Vec & GloVe
             
           </span>
         </div>
@@ -178,7 +183,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Data Science" class="md-nav__button md-logo" aria-label="Data Science" data-md-component="logo">
+    <a href="../.." title="Data Science" class="md-nav__button md-logo" aria-label="Data Science" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -196,7 +201,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -251,7 +256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../fastapi/intro/" class="md-nav__link">
+      <a href="../../fastapi/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -272,7 +277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../fastapi/first_steps/" class="md-nav__link">
+      <a href="../../fastapi/first_steps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -293,7 +298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../fastapi/data_models/" class="md-nav__link">
+      <a href="../../fastapi/data_models/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -314,7 +319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../fastapi/sqlmodel/" class="md-nav__link">
+      <a href="../../fastapi/sqlmodel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -335,7 +340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../fastapi/task/" class="md-nav__link">
+      <a href="../../fastapi/task/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -398,7 +403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../data_analysis/intro/" class="md-nav__link">
+      <a href="../../data_analysis/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -419,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../data_analysis/data_visualization/" class="md-nav__link">
+      <a href="../../data_analysis/data_visualization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -440,7 +445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../data_analysis/understand_datasets/" class="md-nav__link">
+      <a href="../../data_analysis/understand_datasets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -461,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../data_analysis/eda_steps/" class="md-nav__link">
+      <a href="../../data_analysis/eda_steps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -482,7 +487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../data_analysis/tasks/" class="md-nav__link">
+      <a href="../../data_analysis/tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -545,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW49-50/overview/" class="md-nav__link">
+      <a href="../../KW49-50/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -601,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW49-50/data_processing/intro/" class="md-nav__link">
+      <a href="../../KW49-50/data_processing/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -622,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW49-50/data_processing/missing_values/" class="md-nav__link">
+      <a href="../../KW49-50/data_processing/missing_values/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -643,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW49-50/data_processing/outliers/" class="md-nav__link">
+      <a href="../../KW49-50/data_processing/outliers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -664,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW49-50/data_processing/duplicates/" class="md-nav__link">
+      <a href="../../KW49-50/data_processing/duplicates/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -685,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW49-50/data_processing/type_conversion/" class="md-nav__link">
+      <a href="../../KW49-50/data_processing/type_conversion/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -714,7 +719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW49-50/goals/" class="md-nav__link">
+      <a href="../../KW49-50/goals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -812,7 +817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW51/feature_engineering/encoding/" class="md-nav__link">
+      <a href="../../KW51/feature_engineering/encoding/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -833,7 +838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW51/feature_engineering/scaling/" class="md-nav__link">
+      <a href="../../KW51/feature_engineering/scaling/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -854,7 +859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW51/feature_engineering/transformation/" class="md-nav__link">
+      <a href="../../KW51/feature_engineering/transformation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -875,7 +880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW51/feature_engineering/feature_extraction/" class="md-nav__link">
+      <a href="../../KW51/feature_engineering/feature_extraction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -896,7 +901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW51/feature_engineering/new_features/" class="md-nav__link">
+      <a href="../../KW51/feature_engineering/new_features/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -925,7 +930,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW51/goals/" class="md-nav__link">
+      <a href="../../KW51/goals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1023,7 +1028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW2/statistical_and_machine_learning/train_models/" class="md-nav__link">
+      <a href="../../KW2/statistical_and_machine_learning/train_models/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1044,7 +1049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW2/statistical_and_machine_learning/generalization/" class="md-nav__link">
+      <a href="../../KW2/statistical_and_machine_learning/generalization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1065,7 +1070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW2/statistical_and_machine_learning/test_train_split/" class="md-nav__link">
+      <a href="../../KW2/statistical_and_machine_learning/test_train_split/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1086,7 +1091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW2/statistical_and_machine_learning/distance_metrics/distance_metrics/" class="md-nav__link">
+      <a href="../../KW2/statistical_and_machine_learning/distance_metrics/distance_metrics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1107,7 +1112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW2/statistical_and_machine_learning/evaluation/" class="md-nav__link">
+      <a href="../../KW2/statistical_and_machine_learning/evaluation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1171,7 +1176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW2/decision_trees/intro/" class="md-nav__link">
+      <a href="../../KW2/decision_trees/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1192,7 +1197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW2/decision_trees/split-criteria/" class="md-nav__link">
+      <a href="../../KW2/decision_trees/split-criteria/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1213,7 +1218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW2/decision_trees/random_forest/" class="md-nav__link">
+      <a href="../../KW2/decision_trees/random_forest/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1277,7 +1282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW2/svm/svm/" class="md-nav__link">
+      <a href="../../KW2/svm/svm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1341,7 +1346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW2/naive_bayes/intro/" class="md-nav__link">
+      <a href="../../KW2/naive_bayes/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1362,7 +1367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW2/naive_bayes/naive_bayes/" class="md-nav__link">
+      <a href="../../KW2/naive_bayes/naive_bayes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1391,7 +1396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW2/kmeans/k-means/" class="md-nav__link">
+      <a href="../../KW2/kmeans/k-means/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1412,7 +1417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW2/linear_regression/linear_regression/" class="md-nav__link">
+      <a href="../../KW2/linear_regression/linear_regression/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1468,7 +1473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW2/goals/" class="md-nav__link">
+      <a href="../../KW2/goals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1489,7 +1494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../week5/goals.md" class="md-nav__link">
+      <a href="../../week5/goals.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1553,7 +1558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW2/assignments/car_features/" class="md-nav__link">
+      <a href="../../KW2/assignments/car_features/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1586,19 +1591,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -1612,7 +1615,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             KW 3
@@ -1626,7 +1629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../intro/" class="md-nav__link">
+      <a href="../../KW3/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1644,19 +1647,17 @@
                 
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
         
           
           <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
@@ -1670,7 +1671,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7_2">
             <span class="md-nav__icon md-icon"></span>
             Streamlit
@@ -1684,7 +1685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../intro/" class="md-nav__link">
+      <a href="../../KW3/streamlit/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1705,7 +1706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../structure/" class="md-nav__link">
+      <a href="../../KW3/streamlit/structure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1723,17 +1724,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../KW3/streamlit/visualization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1742,7 +1736,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1755,7 +1748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../layout/" class="md-nav__link">
+      <a href="../../KW3/streamlit/layout/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1776,7 +1769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-handling/" class="md-nav__link">
+      <a href="../../KW3/streamlit/data-handling/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1797,7 +1790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../interactivity/" class="md-nav__link">
+      <a href="../../KW3/streamlit/interactivity/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1818,7 +1811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../caching/" class="md-nav__link">
+      <a href="../../KW3/streamlit/caching/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1839,7 +1832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../multipage-apps/" class="md-nav__link">
+      <a href="../../KW3/streamlit/multipage-apps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1860,7 +1853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../secrets-authentication/" class="md-nav__link">
+      <a href="../../KW3/streamlit/secrets-authentication/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1881,7 +1874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../outlook/" class="md-nav__link">
+      <a href="../../KW3/streamlit/outlook/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1945,7 +1938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../assignments/streamlit/" class="md-nav__link">
+      <a href="../../KW3/assignments/streamlit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1966,7 +1959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../assignments/dash/" class="md-nav__link">
+      <a href="../../KW3/assignments/dash/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2037,7 +2030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW4/goals/" class="md-nav__link">
+      <a href="../../KW4/goals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2058,7 +2051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW4/scaling/" class="md-nav__link">
+      <a href="../../KW4/scaling/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2079,7 +2072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW4/metrics/" class="md-nav__link">
+      <a href="../../KW4/metrics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2100,7 +2093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW4/smote/" class="md-nav__link">
+      <a href="../../KW4/smote/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2121,7 +2114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW4/knn/" class="md-nav__link">
+      <a href="../../KW4/knn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2142,7 +2135,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW4/pca/" class="md-nav__link">
+      <a href="../../KW4/pca/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2163,7 +2156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW4/pca_smote_cheat_sheet/" class="md-nav__link">
+      <a href="../../KW4/pca_smote_cheat_sheet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2219,7 +2212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW4/assignments/analytics-dashbaord/" class="md-nav__link">
+      <a href="../../KW4/assignments/analytics-dashbaord/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2240,7 +2233,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW4/assignments/car-features/" class="md-nav__link">
+      <a href="../../KW4/assignments/car-features/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2273,17 +2266,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
         
           
           <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
@@ -2297,7 +2292,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             KW 5
@@ -2308,17 +2303,19 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" checked>
         
           
           <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
@@ -2332,7 +2329,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9_1">
             <span class="md-nav__icon md-icon"></span>
             NLTK
@@ -2346,7 +2343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW5/nltk/" class="md-nav__link">
+      <a href="../nltk/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2367,7 +2364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW5/domain-specific-terms/" class="md-nav__link">
+      <a href="../domain-specific-terms/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2388,7 +2385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW5/vader/" class="md-nav__link">
+      <a href="../vader/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2409,7 +2406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW5/extended_sentiment_analysis/" class="md-nav__link">
+      <a href="../extended_sentiment_analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2430,7 +2427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW5/vectorization_embeddings/" class="md-nav__link">
+      <a href="../vectorization_embeddings/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2448,10 +2445,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../KW5/word2vec_glove/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Word2Vec & GloVe
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2460,6 +2477,167 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#grundlegendes-konzept" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grundlegendes Konzept
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#word2vec-im-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Word2Vec im Detail
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Word2Vec im Detail">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grundlegende-implementierung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grundlegende Implementierung
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exkurs-skip-gram-algorithmus-im-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      EXKURS: Skip-gram Algorithmus im Detail
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glove-global-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      GloVe: Global Vectors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GloVe: Global Vectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grundlegende-implementierung_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grundlegende Implementierung
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exkurs-glove-algorithmus-im-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      EXKURS: GloVe Algorithmus im Detail
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vergleich-und-praktische-anwendung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vergleich und praktische Anwendung
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vergleich und praktische Anwendung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starken-von-word2vec" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stärken von Word2Vec:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starken-von-glove" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stärken von GloVe:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exkurs-optimierungstechniken" class="md-nav__link">
+    <span class="md-ellipsis">
+      EXKURS: Optimierungstechniken
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#praktische-implementierung-und-anwendung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Praktische Implementierung und Anwendung
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Praktische Implementierung und Anwendung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exkurs-fortgeschrittene-anwendungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      EXKURS: Fortgeschrittene Anwendungen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2480,7 +2658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW5/goals/" class="md-nav__link">
+      <a href="../goals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2536,7 +2714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW5/assignments/used_cars/" class="md-nav__link">
+      <a href="../assignments/used_cars/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2557,7 +2735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW5/assignments/shopping_reviews/" class="md-nav__link">
+      <a href="../assignments/shopping_reviews/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2628,7 +2806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../week8/goals/" class="md-nav__link">
+      <a href="../../week8/goals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2691,7 +2869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../week9/goals/" class="md-nav__link">
+      <a href="../../week9/goals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2754,7 +2932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW49-500/goals.md" class="md-nav__link">
+      <a href="../../KW49-500/goals.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2817,7 +2995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../KW49-501/goals.md" class="md-nav__link">
+      <a href="../../KW49-501/goals.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2855,6 +3033,157 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#grundlegendes-konzept" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grundlegendes Konzept
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#word2vec-im-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Word2Vec im Detail
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Word2Vec im Detail">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grundlegende-implementierung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grundlegende Implementierung
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exkurs-skip-gram-algorithmus-im-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      EXKURS: Skip-gram Algorithmus im Detail
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glove-global-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      GloVe: Global Vectors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GloVe: Global Vectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grundlegende-implementierung_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grundlegende Implementierung
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exkurs-glove-algorithmus-im-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      EXKURS: GloVe Algorithmus im Detail
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vergleich-und-praktische-anwendung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vergleich und praktische Anwendung
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vergleich und praktische Anwendung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starken-von-word2vec" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stärken von Word2Vec:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starken-von-glove" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stärken von GloVe:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exkurs-optimierungstechniken" class="md-nav__link">
+    <span class="md-ellipsis">
+      EXKURS: Optimierungstechniken
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#praktische-implementierung-und-anwendung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Praktische Implementierung und Anwendung
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Praktische Implementierung und Anwendung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exkurs-fortgeschrittene-anwendungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      EXKURS: Fortgeschrittene Anwendungen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2869,27 +3198,202 @@
                   
 
 
-  <h1>Visualisierungen</h1>
+<h1 id="word2vec-und-glove-eine-vollstandige-betrachtung">Word2Vec und GloVe: Eine vollständige Betrachtung</h1>
+<h2 id="grundlegendes-konzept">Grundlegendes Konzept</h2>
+<p>Word2Vec und GloVe sind zwei fundamentale Ansätze zur Erstellung von Word Embeddings. Beide Methoden basieren auf der linguistischen Annahme, dass die Bedeutung eines Wortes durch seinen Kontext bestimmt wird. Diese Idee wird in der Linguistik als distributionelle Semantik bezeichnet.</p>
+<h2 id="word2vec-im-detail">Word2Vec im Detail</h2>
+<p>Word2Vec verwendet ein neuronales Netzwerk mit einer versteckten Schicht, um Wörter in einen kontinuierlichen Vektorraum abzubilden. Es gibt zwei grundlegende Architekturen:</p>
+<ol>
+<li><strong>CBOW (Continuous Bag of Words)</strong>: Vorhersage eines Wortes aus seinem Kontext</li>
+<li><strong>Skip-gram</strong>: Vorhersage des Kontexts aus einem Wort</li>
+</ol>
+<h3 id="grundlegende-implementierung">Grundlegende Implementierung</h3>
+<pre><code class="language-python">from gensim.models import Word2Vec
 
-<p>Einer der Hauptvorteile von Streamlit ist, dass es dafür ausgelegt wurde, mit Dataframes und Visualisierungen zu arbeiten. Dadurch können grafiken sehr schnell und einfach erstellt werden. Bibliotheken wie Matplotlib, Seaborn oder Plotly sind direkt integriert. Diese Flexibilität ermöglicht es, visuelle Darstellungen individuell an die Bedürfnisse deines Projekts anzupassen, sei es für explorative Analysen oder die Kommunikation von Ergebnissen.</p>
-<p><strong>Beispiel</strong>  </p>
-<pre><code class="language-python">import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
+# Beispiel für Skip-gram
+sentences = [[&quot;Der&quot;, &quot;Hund&quot;, &quot;bellt&quot;, &quot;laut&quot;], 
+            [&quot;Die&quot;, &quot;Katze&quot;, &quot;miaut&quot;, &quot;leise&quot;]]
 
-# Daten und Plot
-data = pd.DataFrame({&quot;Kategorie&quot;: [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;], &quot;Werte&quot;: [10, 20, 15]})
-fig, ax = plt.subplots()
-data.plot(kind=&quot;bar&quot;, x=&quot;Kategorie&quot;, y=&quot;Werte&quot;, ax=ax)
-
-# Ausgabe
-st.pyplot(fig)
+model = Word2Vec(sentences, vector_size=100, window=2, sg=1)
 </code></pre>
-<p>Streamlit bietet mit sogenannten <code>magic commands</code> sogar eine Abkürzung, um Texte und Dataframes auszugeben. Diese können direkt in den Code integriert werden und ersparen dir das Schreiben von <code>st.write()</code> oder <code>st.dataframe()</code>.</p>
-<p><strong>Link zum Nachschlagen</strong><br />
-<a href="https://docs.streamlit.io/get-started/fundamentals/main-concepts">Streamlit Dokumentation - Charts</a>
-<a href="https://docs.streamlit.io/develop/api-reference/write-magic/magic">Streamlit Magic Commands</a></p>
-<hr />
+<h3 id="exkurs-skip-gram-algorithmus-im-detail">EXKURS: Skip-gram Algorithmus im Detail</h3>
+<p>Der Skip-gram Algorithmus maximiert die bedingte Wahrscheinlichkeit des Kontexts, gegeben ein Zielwort. Der mathematische Prozess läuft wie folgt ab:</p>
+<pre><code class="language-python">def skip_gram_detailed(center_word_idx, context_window, W, C):
+    # Center word vector
+    v_c = W[center_word_idx]
+
+    total_loss = 0
+    gradients = []
+
+    for pos in context_window:
+        # Context word vector
+        u_o = C[pos]
+
+        # Softmax Berechnung
+        score = np.dot(v_c, u_o)
+        prob = np.exp(score) / np.sum(np.exp(np.dot(v_c, C.T)))
+
+        # Loss berechnen
+        loss = -np.log(prob)
+        total_loss += loss
+
+        # Gradienten speichern
+        grad = (prob - 1) * u_o
+        gradients.append(grad)
+
+    return total_loss, gradients
+</code></pre>
+<h2 id="glove-global-vectors">GloVe: Global Vectors</h2>
+<p>GloVe unterscheidet sich von Word2Vec durch seinen globalen Ansatz. Statt einzelner Kontextfenster betrachtet GloVe die gesamte Wort-Kookkurrenz-Matrix des Textkorpus.</p>
+<h3 id="grundlegende-implementierung_1">Grundlegende Implementierung</h3>
+<pre><code class="language-python">def create_cooccurrence_matrix(sentences, window_size=2):
+    vocab = {}
+    word_count = 0
+
+    # Vokabular erstellen
+    for sentence in sentences:
+        for word in sentence:
+            if word not in vocab:
+                vocab[word] = word_count
+                word_count += 1
+
+    # Kookkurrenz-Matrix aufbauen
+    cooc = np.zeros((len(vocab), len(vocab)))
+
+    for sentence in sentences:
+        for i, word in enumerate(sentence):
+            for j in range(max(0, i-window_size), 
+                         min(len(sentence), i+window_size+1)):
+                if i != j:
+                    cooc[vocab[word]][vocab[sentence[j]]] += 1
+
+    return cooc, vocab
+</code></pre>
+<h3 id="exkurs-glove-algorithmus-im-detail">EXKURS: GloVe Algorithmus im Detail</h3>
+<p>GloVe optimiert eine spezielle Verlustfunktion, die die globalen Kookkurrenzen berücksichtigt:</p>
+<pre><code class="language-python">def glove_loss_detailed(W, W_context, b_w, b_c, X, f_max=100, alpha=0.75):
+    vocab_size = W.shape[0]
+    loss = 0
+    gradients = {
+        'W': np.zeros_like(W),
+        'W_context': np.zeros_like(W_context),
+        'b_w': np.zeros_like(b_w),
+        'b_c': np.zeros_like(b_c)
+    }
+
+    for i in range(vocab_size):
+        for j in range(vocab_size):
+            if X[i,j] &gt; 0:
+                # Gewichtungsfunktion
+                weight = (X[i,j]/f_max)**alpha if X[i,j] &lt; f_max else 1
+
+                # Berechne Vorhersage und Ziel
+                prediction = np.dot(W[i], W_context[j]) + b_w[i] + b_c[j]
+                target = np.log(X[i,j])
+
+                # Berechne gewichteten Verlust
+                diff = prediction - target
+                loss += weight * (diff ** 2)
+
+                # Aktualisiere Gradienten
+                gradients['W'][i] += weight * diff * W_context[j]
+                gradients['W_context'][j] += weight * diff * W[i]
+                gradients['b_w'][i] += weight * diff
+                gradients['b_c'][j] += weight * diff
+
+    return loss, gradients
+</code></pre>
+<h2 id="vergleich-und-praktische-anwendung">Vergleich und praktische Anwendung</h2>
+<h3 id="starken-von-word2vec">Stärken von Word2Vec:</h3>
+<ul>
+<li>Effizient bei großen Datensätzen</li>
+<li>Gut bei seltenen Wörtern</li>
+<li>Lernt aus lokalem Kontext</li>
+</ul>
+<h3 id="starken-von-glove">Stärken von GloVe:</h3>
+<ul>
+<li>Nutzt globale Statistiken</li>
+<li>Bessere Performance bei häufigen Wörtern</li>
+<li>Explizite Modellierung von Wortbeziehungen</li>
+</ul>
+<h3 id="exkurs-optimierungstechniken">EXKURS: Optimierungstechniken</h3>
+<p>Beide Methoden verwenden unterschiedliche Optimierungstechniken:</p>
+<pre><code class="language-python">def adagrad_optimizer(params, gradients, learning_rate=0.05, epsilon=1e-8):
+    &quot;&quot;&quot;AdaGrad Optimierung für GloVe&quot;&quot;&quot;
+    if not hasattr(adagrad_optimizer, &quot;hist_grads&quot;):
+        adagrad_optimizer.hist_grads = {k: np.zeros_like(v) 
+                                      for k, v in params.items()}
+
+    updated_params = {}
+    for param_name in params:
+        # Akkumuliere quadrierte Gradienten
+        adagrad_optimizer.hist_grads[param_name] += \
+            gradients[param_name]**2
+
+        # Berechne adaptierte Lernrate
+        adapted_lr = learning_rate / (np.sqrt(
+            adagrad_optimizer.hist_grads[param_name] + epsilon))
+
+        # Update Parameter
+        updated_params[param_name] = params[param_name] - \
+                                   adapted_lr * gradients[param_name]
+
+    return updated_params
+
+def negative_sampling(positive_word_idx, vocab_size, n_samples=5):
+    &quot;&quot;&quot;Negative Sampling für Word2Vec&quot;&quot;&quot;
+    negatives = []
+    while len(negatives) &lt; n_samples:
+        neg_idx = np.random.randint(0, vocab_size)
+        if neg_idx != positive_word_idx:
+            negatives.append(neg_idx)
+    return negatives
+</code></pre>
+<h2 id="praktische-implementierung-und-anwendung">Praktische Implementierung und Anwendung</h2>
+<p>Ein vollständiges Beispiel für die Verwendung beider Methoden:</p>
+<pre><code class="language-python">def compare_embeddings(texts):
+    # Word2Vec Training
+    w2v_model = Word2Vec(texts, vector_size=100, window=5, 
+                        min_count=1, workers=4)
+
+    # GloVe Vorbereitung
+    cooc_matrix, vocab = create_cooccurrence_matrix(texts)
+
+    # Vergleiche Wortähnlichkeiten
+    test_word = &quot;Hund&quot;
+    similar_words_w2v = w2v_model.wv.most_similar(test_word)
+
+    print(&quot;Word2Vec ähnliche Wörter:&quot;, similar_words_w2v)
+
+    return w2v_model
+</code></pre>
+<h3 id="exkurs-fortgeschrittene-anwendungen">EXKURS: Fortgeschrittene Anwendungen</h3>
+<p>In der Praxis werden oft spezielle Techniken verwendet, um die Qualität der Embeddings zu verbessern:</p>
+<ol>
+<li><strong>Subword Information</strong>: Behandlung von unbekannten Wörtern</li>
+<li><strong>Dynamic Window Size</strong>: Anpassung der Kontextgröße</li>
+<li><strong>Frequency Weighting</strong>: Gewichtung basierend auf Worthäufigkeit</li>
+</ol>
+<pre><code class="language-python">def advanced_preprocessing(text):
+    &quot;&quot;&quot;Fortgeschrittene Vorverarbeitung für bessere Embeddings&quot;&quot;&quot;
+    # Subword-Tokenisierung
+    subwords = break_into_subwords(text)
+
+    # Dynamische Fenstergröße
+    window_size = calculate_dynamic_window(text)
+
+    # Frequenzgewichtung
+    weights = calculate_frequency_weights(text)
+
+    return subwords, window_size, weights
+</code></pre>
+<p>Die Wahl zwischen Word2Vec und GloVe hängt von spezifischen Anforderungen ab:</p>
+<ul>
+<li>Datenmenge und Rechenressourcen</li>
+<li>Gewünschte semantische Eigenschaften</li>
+<li>Bedeutung seltener Wörter</li>
+<li>Notwendigkeit globaler Statistiken</li>
+</ul>
 
 
 
@@ -2936,12 +3440,12 @@ st.pyplot(fig)
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
