@@ -12,5 +12,5 @@
 1. Skalieren/ Normalisieren
 2. PCA initialisieren und erklärende Varianz betrachten 
 3. Anzahl der Komponenten anhand der kummilierten Varianz oder Ellenbogen-Kriterium bestimmen
-4. Transformation der Trainingsdaten anhand der PCA durchführen
-5. Gleiches können wir danach über `model.transform()` auch für die Testdaten machen
+4. Transformation der Trainingsdaten (nicht der Testdaten) anhand der PCA durchführen
+5. Gleiches können wir danach über `model.transform()` auch für die Testdaten machen.

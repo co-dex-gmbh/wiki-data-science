@@ -3,6 +3,8 @@ Du arbeitest als Data Scientist für einen US-amerikanischen Gebrauchtwagenhänd
 
 Deshalb ist es deiner Chefin wichtig, möglichst viele Fehlkäufe von "Montagsautos" auszuschließen. Um die Einkäufer im Unternehmen bei der riesigen Anzahl an Angeboten zu entlasten, sollst du ein Modell entwickeln, welches vorhersagt, ob ein Angebot ein Fehlkauf im Sinne eines Montagsautos wäre. Das darf allerdings nicht dazu führen, dass zu viele gute Käufe ausgeschlossen werden. Genauere Angaben zu den Kosten und Gewinnen der jeweiligen Käufe erhältst du für die Entwicklung des Prototyps noch nicht.
 
+**Hinweis** Deine Daten kannst du nach dem Training und Test anhand der Datei features_aim.csv testen. Die zugehörigen Labels werden nachträglich bereitgestllt.
+
 ## Beschreibung zu den Spalten
 
 | Spaltennummer | Spaltenname                         | Datenniveau               | Beschreibung                                                                                                                                                         |
