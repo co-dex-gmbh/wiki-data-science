@@ -103,10 +103,17 @@ nav:
         - Analytics Dashboard: KW4/assignments/analytics-dashbaord.md
         - Car Features - SMOTE und PCA: KW4/assignments/car-features.md
   - KW 5:
-      - NLTK: KW5/nltk.md
+      - NLTK: 
+        - Allgemein: KW5/nltk.md
+        - Fachbegriffe: KW5/domain-specific-terms.md
+        - Vader: KW5/vader.md
+        - Weitere Methoden der Sentiment Analysis: KW5/extended_sentiment_analysis.md
+        - Embeddings & Vektorisierung: KW5/vectorization_embeddings.md
+        - Word2Vec & GloVe: KW5/word2vec_glove.md
       - Ziele: KW5/goals.md
       - Aufgaben: 
         - Gebrauchtwagen: KW5/assignments/used_cars.md
+        - Shopping Reviews: KW5/assignments/shopping_reviews.md
   - KW 6:
       - Ziele: week8/goals.md
   - KW 7:
