@@ -105,6 +105,8 @@ nav:
   - KW 5:
       - NLTK: KW5/nltk.md
       - Ziele: KW5/goals.md
+      - Aufgaben: 
+        - Gebrauchtwagen: KW5/assignments/used_cars.md
   - KW 6:
       - Ziele: week8/goals.md
   - KW 7:
