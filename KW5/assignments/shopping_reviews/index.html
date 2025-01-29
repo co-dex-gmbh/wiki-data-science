@@ -3056,9 +3056,6 @@ import nltk
 from nltk.tokenize import word_tokenize
 nltk.download('punkt')
 
-# Beispiel-Reviews
-reviews = df['Review Text'].fillna('').tolist()
-
 </code></pre>
 <h2 id="aufgabe-2-named-entity-recognition">Aufgabe 2: Named Entity Recognition</h2>
 <p>Identifizieren Sie Produktmarken, Größenangaben und andere relevante Entities in den Reviews.</p>
@@ -3069,9 +3066,6 @@ reviews = df['Review Text'].fillna('').tolist()
 </ol>
 <pre><code class="language-python">import spacy
 nlp = spacy.load('en_core_web_sm')
-
-# Beispiel-Review
-review = &quot;I bought a size M dress from this retailer and it fits perfectly.&quot;
 
 </code></pre>
 <h2 id="aufgabe-3-textbereinigung">Aufgabe 3: Textbereinigung</h2>
